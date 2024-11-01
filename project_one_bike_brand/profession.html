@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="item profession">
+                <div class="heading">
+                    <h2>Choose Profession</h2>
+                </div>
+                <div class="brand-container">
+                    <!-- Each brand triggers a bike selection tab -->
+
+                    <div class="item-text profession" onclick="selectProfession(this)">
+                        <input type="radio" name="profession" class="hidden-radio" value="Government Employee">
+                        <span>Government Employee</span>
+                    </div>
+                    <div class="item-text profession" onclick="selectProfession(this)">
+                        <input type="radio" name="profession" class="hidden-radio" value="Private Job">
+                        <span>Private Job</span>
+                    </div>
+                    <div class="item-text profession" onclick="selectProfession(this)">
+                        <input type="radio" name="profession" class="hidden-radio" value="Government Contract">
+                        <span>Government Contract</span>
+                    </div>
+                    <div class="item-text profession" onclick="selectProfession(this)">
+                        <input type="radio" name="profession" class="hidden-radio" value="Small Business">
+                        <span>Small Business</span>
+                    </div>
+                    <div class="item-text profession" onclick="selectProfession(this)">
+                        <input type="radio" name="profession" class="hidden-radio" value="Large Business">
+                        <span>Large Business</span>
+                    </div>
+                    <div class="item-text profession" onclick="selectProfession(this)">
+                        <input type="radio" name="profession" class="hidden-radio" value="Shop">
+                        <span>Shop</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function selectProfession(element) {
+        // Remove selected class from other elements
+        document.querySelectorAll('.item-text').forEach(item => {
+            item.classList.remove('selected');
+        });
+
+        // Add selected class to the clicked element
+        element.classList.add('selected');
+
+        // Set the radio button inside the clicked div to checked
+        element.querySelector('.hidden-radio').checked = true;
+    }
+
+    function getSelectedProfession() {
+        const selectedRadio = document.querySelector('.hidden-radio:checked');
+        if (selectedRadio) {
+            alert("Selected Profession: " + selectedRadio.value);
+        } else {
+            alert("No profession selected");
+        }
+    }
+</script>
+
+<!-- <script>
+    const profession = document.querySelectorAll('.profession');
+
+    // profession.forEach(e => {
+
+    //     e.addEventListener('click', () => {
+    //         e.classList.toggle('active')
+    //     })
+
+    // })
+</script> -->
+
+</html>

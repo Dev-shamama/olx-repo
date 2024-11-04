@@ -31,20 +31,29 @@
     justify-content: space-between;
     text-align: right;
     align-items: center;
+    border-radius: 8px;
     flex-direction: row;
 }
+
 @keyframes growProgressBar {
-    0%, 33% { --pgPercentage: 0; }
-    100% { --pgPercentage: var(--value); }
-  }
-  
-  @property --pgPercentage {
+
+    0%,
+    33% {
+        --pgPercentage: 0;
+    }
+
+    100% {
+        --pgPercentage: var(--value);
+    }
+}
+
+@property --pgPercentage {
     syntax: '<number>';
     inherits: false;
     initial-value: 0;
-  }
-  
-  div[role="progressbar"] {
+}
+
+div[role="progressbar"] {
     --size: 5rem;
     --fg: #EA4736;
     --bg: #EEEEEE;
@@ -55,31 +64,127 @@
     border-radius: 50%;
     display: grid;
     place-items: center;
-    background: 
-      radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
-      conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
-      ;
+    background:
+        radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+        conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
     font-family: Helvetica, Arial, sans-serif;
     font-size: calc(var(--size) / 5);
     color: var(--fg)
-  }
-  
-  div[role="progressbar"]::before {
+}
+
+div[role="progressbar"]::before {
     counter-reset: percentage var(--value);
     /* content: counter(percentage) '%'; */
     content: attr(data-value);
-  }
+}
 
 
-.container .review .right-side h4 { 
+.container .review .right-side h4 {
     font-weight: 500;
     letter-spacing: 1.2px;
 }
-.container .review .right-side p { 
+
+.container .review .right-side p {
     font-size: 12px;
 }
 
-  
+@media only screen and (max-width: 900px) {
+
+    .container .review {
+        width: 480px !important;
+}
+    .container .form {
+        width: 480px !important;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+    .container .review {
+        width: 780px !important;
+
+    }
+
+    .container .form {
+        width: 780px !important;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 8px;
+    }
+
+    .container .form .name-grid {
+        grid-column: span 6 / span 6;
+    }
+
+    .container .form .cnic-grid {
+        grid-column: span 3 / span 3;
+        grid-row-start: 2;
+    }
+
+    .container .form .daraz-grid {
+        grid-column: span 3 / span 3;
+        grid-column-start: 4;
+        grid-row-start: 2;
+    }
+
+    .container .form .whatsapp-grid {
+        grid-column: span 2 / span 2;
+        grid-row-start: 3;
+    }
+
+    .container .form .chooseBike-grid {
+        grid-column: span 2 / span 2;
+        grid-column-start: 3;
+        grid-row-start: 3;
+    }
+
+    .container .form .dateBirth-grid {
+        grid-column: span 2 / span 2;
+        grid-column-start: 5;
+        grid-row-start: 3;
+    }
+
+
+    .container .form .city-grid {
+        grid-column: span 3 / span 3;
+        grid-row-start: 4;
+    }
+
+
+    .container .form .incomeType-grid {
+        grid-column: span 3 / span 3;
+        grid-column-start: 4;
+        grid-row-start: 4;
+    }
+
+    .container .form .address-grid {
+        grid-column: span 6 / span 6;
+        grid-row-start: 5;
+    }
+
+    .container .form .password-grid {
+        grid-column: span 6 / span 6;
+        grid-row-start: 6;
+    }
+
+    .form .btn-container {
+        grid-column: span 6 / span 6;
+        grid-row-start: 7;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .container .review {
+        width: 100% !important;
+    }
+
+    .container .form {
+        width: 100% !important;
+    }
+}
+
 
 
 
@@ -255,6 +360,6 @@ label {
     .container .review {
         width: 100%;
     }
- 
+
 
 }

@@ -17,57 +17,144 @@
     display: flex;
     justify-content: center;
     background-color: #EEEEEE;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
 }
+
+.container .review {
+    width: 380px;
+    padding: 10px 20px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    align-items: center;
+    flex-direction: row;
+}
+@keyframes growProgressBar {
+    0%, 33% { --pgPercentage: 0; }
+    100% { --pgPercentage: var(--value); }
+  }
+  
+  @property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  
+  div[role="progressbar"] {
+    --size: 5rem;
+    --fg: #EA4736;
+    --bg: #EEEEEE;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: 
+      radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+      conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+      ;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg)
+  }
+  
+  div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    /* content: counter(percentage) '%'; */
+    content: attr(data-value);
+  }
+
+
+.container .review .right-side h4 { 
+    font-weight: 500;
+    letter-spacing: 1.2px;
+}
+.container .review .right-side p { 
+    font-size: 12px;
+}
+
+  
+
+
 
 .container .form {
     width: 380px;
-    padding: 20px;
+    padding: 30px;
+    margin: 6px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    margin: 80px 0;
+    position: relative;
 }
 
-.container .form h2 {
-    margin-bottom: 18px;
+.input-form {
+    padding: 15px 0;
 }
 
-.container .form .input-form {
+input[type=date]::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input[type=date]::-webkit-datetime-edit {
+    color: black !important;
+}
+
+.form-group {
     width: 100%;
-    background-color: #EEEEEE;
-    display: flex;
-    flex-direction: row;
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 18px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-
-.container .form .input-form .icon {
-    padding: 5px 12px;
-    font-size: 24px;
-    color: var(--fav-color);
-    background-color: #DCDBD9;
-}
-
-.container .form .input-form .icon.img {
-    width: 50px;
-    height: 50px;
-}
-
-.container .form .input-form .icon.img img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-}
-
-.container .form .input-form input {
-    background: none;
+input {
+    border: 2px solid rgba(0, 0, 0, .3);
     outline: none;
-    border: none;
     width: 100%;
-    padding: 0 12px;
+    height: 45px;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
+
+select {
+    border: 2px solid rgba(0, 0, 0, .3) !important;
+    outline: none;
+    width: 100%;
+    height: 45px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+input:focus {
+    border-color: var(--fav-color);
+}
+
+label {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    padding: 0 5px;
+    color: rgba(0, 0, 0, .7);
+    transition: all .3s ease-in-out;
+}
+
+
+.isEmpty+label {
+    top: 0px;
+    background-color: white;
+    padding: 0 5px;
+    color: var(--fav-color-dark);
+    font-size: 12px;
+}
+
 
 .container .form .input-form select {
     width: 100%;
@@ -100,12 +187,14 @@
 
 .progress .progress-bar.bar-1.active {
     background: #e90f10;
-    
+
 }
+
 .progress .progress-bar.bar-2.active {
     background: #ffad00;
 
 }
+
 .progress .progress-bar.bar-3.active {
     background: #02b502;
 }
@@ -161,9 +250,11 @@
 @media only screen and (max-width: 400px) {
     .container .form {
         width: 100%;
-        padding: 16px;
-        margin: 40px 10px;
-        /* margin: auto 10px; */
-    }   
+    }
+
+    .container .review {
+        width: 100%;
+    }
+ 
 
 }

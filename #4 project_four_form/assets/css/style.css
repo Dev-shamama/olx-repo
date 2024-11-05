@@ -6,27 +6,66 @@
     box-sizing: border-box;
     font-family: "Poppins", serif;
 }
+body {
+    background: #EEEEEE;
+}
 
 :root {
     --fav-color: #EA4736;
     --fav-color-dark: #e14130;
+
+    --body-background-color: #FFFFFF;
+    --v-progress-left: 50px;
+    --v-progress-item-height-width: 27px;
+    --v-progress-line-height: 72px;
+    --v-progress-line-width: 4px;
+    --v-progress-gap: 13px;
+    --blue: #e14130;
+    --green: #159895;
+    --light-blue: #e14130;
 }
 
 .container {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #EEEEEE;
+    flex-direction: row;
+    padding-top: 20px;
+    position: relative;
+}
+
+.left-side-step-form {
+    width: 300px;
+    height: 100vh;
+    background-color: #EEEEEE;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.right-side-form {
+    width: calc(100% - 300px);
+    position: absolute;
+    left: 300px;
+    top: 0;
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    padding-top: 20px;
 }
 
 .container .review {
     width: 380px;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    margin: 30px;
+    margin-bottom: 10px !important;
     background-color: #fff;
-    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     text-align: right;
@@ -35,48 +74,6 @@
     flex-direction: row;
 }
 
-@keyframes growProgressBar {
-
-    0%,
-    33% {
-        --pgPercentage: 0;
-    }
-
-    100% {
-        --pgPercentage: var(--value);
-    }
-}
-
-@property --pgPercentage {
-    syntax: '<number>';
-    inherits: false;
-    initial-value: 0;
-}
-
-div[role="progressbar"] {
-    --size: 5rem;
-    --fg: #EA4736;
-    --bg: #EEEEEE;
-    --pgPercentage: var(--value);
-    animation: growProgressBar 3s 1 forwards;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background:
-        radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
-        conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: calc(var(--size) / 5);
-    color: var(--fg)
-}
-
-div[role="progressbar"]::before {
-    counter-reset: percentage var(--value);
-    /* content: counter(percentage) '%'; */
-    content: attr(data-value);
-}
 
 
 .container .review .right-side h4 {
@@ -91,18 +88,34 @@ div[role="progressbar"]::before {
 @media only screen and (max-width: 900px) {
 
     .container .review {
+        display: flex;
+    }
+    .right-side-form {
+        width: 100%;
+        left: 0px;
+
+    }
+
+    .left-side-step-form {
+        display: none;
+    }
+
+    .container .review {
         width: 480px !important;
-}
+        /* display: flex; */
+    }
+
     .container .form {
         width: 480px !important;
+        margin-top: 0 !important;
     }
 }
+
 
 @media only screen and (min-width: 900px) {
 
     .container .review {
-        width: 780px !important;
-
+        display: none;
     }
 
     .container .form {
@@ -112,6 +125,7 @@ div[role="progressbar"]::before {
         justify-content: center;
         grid-template-columns: repeat(6, 1fr);
         column-gap: 8px;
+        
     }
 
     .container .form .name-grid {
@@ -175,23 +189,35 @@ div[role="progressbar"]::before {
     }
 }
 
-@media only screen and (max-width: 460px) {
+
+
+@media only screen and (max-width: 1234px) {
+
     .container .review {
-        width: 100% !important;
+        width: 520px !important;
     }
 
     .container .form {
-        width: 100% !important;
+        width: 520px !important;
+
     }
 }
+@media only screen and (max-width: 460px) {
+    .container .review {
+        width: 95% !important;
+    }
 
+    .container .form {
+        width: 95% !important;
+    }
+}
 
 
 
 .container .form {
     width: 380px;
     padding: 30px;
-    margin: 6px;
+    margin: 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -251,7 +277,6 @@ label {
     transition: all .3s ease-in-out;
 }
 
-
 .isEmpty+label {
     top: 0px;
     background-color: white;
@@ -260,6 +285,20 @@ label {
     font-size: 12px;
 }
 
+ion-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(0, 0, 0, .5);
+    transition: color .3s ease;
+    font-size: 26px;
+}
+
+ion-icon:hover {
+    color: var(--fav-color);
+}
 
 .container .form .input-form select {
     width: 100%;
@@ -362,4 +401,134 @@ label {
     }
 
 
+}
+
+
+/* ================================== */
+/* ================================== */
+/* vertical progress */
+/* ================================== */
+/* ================================== */
+.v-progress {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 30px 0 30px 0;
+    border-radius: 8px;
+    margin-left: 30px;
+    margin-top: 30px;
+
+}
+
+.v-progress ul {
+    list-style: none;
+}
+
+.v-progress-item {
+    position: relative;
+    /* left: var(--v-progress-left); */
+    margin-left: var(--v-progress-left);
+    height: var(--v-progress-item-height-width);
+    line-height: var(--v-progress-item-height-width);
+    margin-bottom: var(--v-progress-line-height);
+    --v-progress-border: 8px;
+}
+
+.v-progress-item:last-child {
+    margin-bottom: 0px;
+}
+
+.v-progress-item:last-child:after {
+    border-left: 0px;
+}
+
+.v-progress-item:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: var(--v-progress-item-height-width);
+    height: var(--v-progress-item-height-width);
+    left: calc(0px - var(--v-progress-left));
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.v-progress-item:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: calc(var(--v-progress-line-height) - var(--v-progress-gap));
+    top: calc(var(--v-progress-item-height-width) + var(--v-progress-gap) / 2);
+    left: calc(0px - var(--v-progress-left) + var(--v-progress-item-height-width) / 2 - var(--v-progress-line-width) / 2);
+    border-left: var(--v-progress-line-width) solid #ccc;
+}
+
+.v-progress-item.completed:after {
+    border-color: var(--light-blue);
+}
+
+.v-progress-item.completed:before {
+    content: "✔";
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    background: var(--light-blue);
+    height: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
+    width: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
+    line-height: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
+    left: calc(0px - var(--v-progress-left) - var(--v-progress-border) / 2);
+    top: calc(0px - var(--v-progress-border) + var(--v-progress-border) / 2);
+}
+
+.v-progress-item.inprogress:before {
+    background-color: white;
+    /*   height: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
+      width: calc(var(--v-progress-border) + var(--v-progress-item-height-width)); */
+    outline: calc(var(--v-progress-border) / 2) solid var(--blue);
+    top: calc(0px - var(--v-progress-border) + var(--v-progress-border));
+}
+
+@keyframes growProgressBar {
+
+    0%,
+    33% {
+        --pgPercentage: 0;
+    }
+
+    100% {
+        --pgPercentage: var(--value);
+    }
+}
+
+@property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+div[role="progressbar"] {
+    --size: 5rem;
+    --fg: #EA4736;
+    --bg: #EEEEEE;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+        conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg)
+}
+
+div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    /* content: counter(percentage) '%'; */
+    content: attr(data-value);
 }

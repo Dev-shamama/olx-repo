@@ -1,0 +1,27 @@
+Choose Bike
+--- Atlas Honda Bikes ---
+Honda CD70
+Honda CD70 Dream
+Honda Pridor
+Honda CG125
+Honda CG125 SE
+Honda CG125 Gold
+Honda CB125F
+Honda CB150F
+
+--- Suzuki Bikes ---
+Suzuki GD110
+Suzuki GD110s
+Suzuki GSX125
+Suzuki GS150
+Suzuki GR150
+
+--- Yamaha Bikes ---
+Yamaha YB125Z
+Yamaha YB125Z DX
+Yamaha YBR125
+Yamaha YBR125G
+
+--- Chinese Bikes ---
+Unique UD70
+United 125

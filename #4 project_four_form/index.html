@@ -42,64 +42,89 @@
 
                 <div class="input-form name-grid">
                     <div class="form-group">
-                        <input type="text" id="name" class="registerForm">
-                        <label for="name">Enter Your Name</label>
+                        <input type="text" id="name" class="registerForm" placeholder="Enter Your Name">
+                        <label class="form-label" for="name">Enter Your Name</label>
                     </div>
                 </div>
 
 
                 <div class="input-form cnic-grid">
                     <div class="form-group">
-                        <input type="text" class="registerForm" id="cnic" maxlength="14" oninput="formatNumber()">
-                        <label for="cnic">Enter Your CNIC</label>
+                        <input type="text" class="registerForm" id="cnic" maxlength="14" oninput="formatNumber()" placeholder="XXXXX-XXXXXXX-X">
+                        <label class="form-label" for="cnic">Enter Your CNIC</label>
                     </div>
                 </div>
 
 
                 <div class="input-form daraz-grid">
                     <div class="form-group">
-                        <input type="text" id="daraz" class="registerForm">
-                        <label for="daraz">Enter Your Daraz</label>
+                        <input type="text" id="daraz" class="registerForm" placeholder="Enter Your Daraz">
+                        <label class="form-label" for="daraz">Enter Your Daraz</label>
                     </div>
                 </div>
 
 
                 <div class="input-form whatsapp-grid">
                     <div class="form-group">
-                        <input type="text" id="whatsapp" class="registerForm">
-                        <label for="whatsapp">WhatsApp #</label>
+                        <input type="text" id="whatsapp" class="registerForm" placeholder="WhatsApp #">
+                        <label class="form-label" for="whatsapp">WhatsApp #</label>
                     </div>
                 </div>
 
                 <div class="input-form chooseBike-grid">
                     <div class="form-group">
-                        <select name="" id="chooseBike" class="registerForm">
-                            <option disabled selected value=""></option>
-                            <option value="Suzuki">Suzuki</option>
-                            <option value="Honda">Honda</option>
-                            <option value="Yamaha">Yamaha</option>
+                        <select name="" id="chooseBike" class="registerForm" placeholder="Choose Bike">
+                            <option disabled selected value="">--- Atlas Honda Bikes ---</option>
+                            <option value="Honda CD70">Honda CD70</option>
+                            <option value="Honda CD70 Dream">Honda CD70 Dream</option>
+                            <option value="Honda Pridor">Honda Pridor</option>
+                            <option value="Honda CG125">Honda CG125</option>
+                            <option value="Honda CG125 SE">Honda CG125 SE</option>
+                            <option value="Honda CG125 Gold">Honda CG125 Gold</option>
+                            <option value="Honda CB125F">Honda CB125F</option>
+                            <option value="Honda CB150F">Honda CB150F</option>
+
+                            <option value="Suzuki GD110">Suzuki GD110</option>
+                            <option value="Suzuki GD110s">Suzuki GD110s</option>
+                            <option value="Suzuki GSX125">Suzuki GSX125</option>
+                            <option value="Suzuki GS150">Suzuki GS150</option>
+                            <option value="Suzuki GR150">Suzuki GR150</option>
+
+                            <option value="Yamaha YB125Z">Yamaha YB125Z</option>
+                            <option value="Yamaha YB125Z DX">Yamaha YB125Z DX</option>
+                            <option value="Yamaha YBR125">Yamaha YBR125</option>
+                            <option value="Yamaha YBR125G">Yamaha YBR125G</option>
+
+
+                            <option value="Unique UD70">Unique UD70</option>
+                            <option value="United 125">United 125</option>
+
+
+
+
+
                         </select>
-                        <label for="chooseBike">Choose Bike</label>
+                        <label class="form-label" for="chooseBike">Choose Bike</label>
                     </div>
                 </div>
 
 
                 <div class="input-form dateBirth-grid">
                     <div class="form-group">
-                        <input type="date" id="dateBirth" class="registerForm">
-                        <label for="dateBirth"></label>
+                        <input type="date" id="dateBirth" class="registerForm" placeholder="Date Of Birth">
+                        <label class="form-label" for="dateBirth">Date Of Birth</label>
                     </div>
                 </div>
 
 
                 <div class="input-form city-grid">
                     <div class="form-group">
-                        <select name="" id="city" class="registerForm">
-                            <option disabled selected value=""></option>
+                        <select name="" id="city" class="registerForm" placeholder="City">
+                            <option disabled selected value="">Choose City</option>
                             <option value="Karachi">Karachi</option>
                             <option value="Lahore">Lahore</option>
                         </select>
-                        <label for="city">City</label>
+                        <label class="form-label" for="city">City</label>
                     </div>
                 </div>
 
@@ -108,27 +133,27 @@
 
                 <div class="input-form incomeType-grid">
                     <div class="form-group">
-                        <select name="" id="incomeType" class="registerForm">
-                            <option disabled selected value=""></option>
+                        <select name="" id="incomeType" class="registerForm" placeholder="Income Type">
+                            <option disabled selected value="">Choose Income Type</option>
                             <option value="Government">Government</option>
                             <option value="Private">Private</option>
                         </select>
-                        <label for="incomeType">Income Type</label>
+                        <label class="form-label" for="incomeType">Income Type</label>
                     </div>
                 </div>
 
                 <div class="input-form address-grid">
                     <div class="form-group">
-                        <input type="text" id="address" class="registerForm">
-                        <label for="address">Address</label>
+                        <input type="text" id="address" class="registerForm" placeholder="Address">
+                        <label class="form-label" for="address">Address</label>
                     </div>
                 </div>
 
                 <div class="password-grid">
                     <div class="input-form">
                         <div class="form-group">
-                            <input type="password" id="password" class="registerForm">
-                            <label for="password">Password</label>
+                            <input type="password" id="password" class="registerForm" placeholder="Password">
+                            <label class="form-label" for="password">Password</label>
                             <ion-icon name="eye-outline" id="togglePassword"
                                 onclick="togglePasswordVisibility()"></ion-icon>
                         </div>

@@ -1,9 +1,11 @@
 window.addEventListener('load', function () {
+
+
     // Name
     let name = document.getElementById('name');
 
     name.addEventListener('focus', function () {
-        this.classList.add('isEmpty');
+
     });
 
     name.addEventListener('blur', function () {
@@ -91,6 +93,7 @@ window.addEventListener('load', function () {
 
     city.addEventListener('focus', function () {
         this.classList.add('isEmpty');
+        console.log(this)
     });
 
     city.addEventListener('blur', function () {
@@ -287,3 +290,9 @@ function checkStrength(password) {
         bar_3.style = 'width: 100%';
     }
 }
+
+
+
+
+
+

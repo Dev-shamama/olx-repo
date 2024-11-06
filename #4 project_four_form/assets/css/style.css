@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Poppins", serif;
 }
+
 body {
     background: #EEEEEE;
 }
@@ -74,15 +75,31 @@ body {
     flex-direction: row;
 }
 
+.container .important-message {
+    width: 380px;
+    padding: 30px;
+    margin-top: 0 !important;
 
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    position: relative;
+    display: none;
+
+}
+
+.container .important-message.active {
+    display: flex;
+}
 
 .container .review .right-side h4 {
     font-weight: 500;
     letter-spacing: 1.2px;
+    font-size: 18px;
 }
 
 .container .review .right-side p {
-    font-size: 12px;
+    font-size: 11px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -90,6 +107,7 @@ body {
     .container .review {
         display: flex;
     }
+
     .right-side-form {
         width: 100%;
         left: 0px;
@@ -109,6 +127,10 @@ body {
         width: 480px !important;
         margin-top: 0 !important;
     }
+
+    .container .important-message {
+        width: 480px !important;
+    }
 }
 
 
@@ -125,7 +147,25 @@ body {
         justify-content: center;
         grid-template-columns: repeat(6, 1fr);
         column-gap: 8px;
-        
+
+    }
+
+    .container .important-message {
+        width: 780px !important;
+    }
+
+    .container .form .heading-grid {
+        grid-column: span 6 / span 6;
+    }
+
+
+
+    .container .form .image-grid {
+        grid-column: span 6 / span 6;
+    }
+
+    .container .form .preview-image-grid {
+        grid-column: span 6 / span 6;
     }
 
     .container .form .name-grid {
@@ -201,13 +241,23 @@ body {
         width: 520px !important;
 
     }
+
+
+    .container .important-message {
+        width: 520px !important;
+    }
+
 }
+
 @media only screen and (max-width: 460px) {
     .container .review {
         width: 95% !important;
     }
 
     .container .form {
+        width: 95% !important;
+    }
+    .container .important-message {
         width: 95% !important;
     }
 }
@@ -218,6 +268,7 @@ body {
     width: 380px;
     padding: 30px;
     margin: 30px;
+    margin-bottom: 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -226,6 +277,13 @@ body {
 
 .input-form {
     padding: 15px 0;
+}
+
+.input-form.image-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 input[type=date]::-webkit-datetime-edit {
@@ -253,6 +311,11 @@ input {
     border-radius: 4px;
 }
 
+
+input[type=file] {
+    padding-top: 14px;
+}
+
 select {
     border: 2px solid rgba(0, 0, 0, .3) !important;
     outline: none;
@@ -266,18 +329,12 @@ input:focus {
     border-color: var(--fav-color);
 }
 
-label {
+.form-label {
     position: absolute;
     display: inline-block;
-    top: 50%;
     transform: translateY(-50%);
     left: 10px;
-    padding: 0 5px;
-    color: rgba(0, 0, 0, .7);
     transition: all .3s ease-in-out;
-}
-
-.isEmpty+label {
     top: 0px;
     background-color: white;
     padding: 0 5px;
@@ -298,6 +355,58 @@ ion-icon {
 
 ion-icon:hover {
     color: var(--fav-color);
+}
+
+.custum-file-upload {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #cacaca;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+}
+
+.custum-file-upload .icon {
+    display: flex;
+    /* display: none; */
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+    height: 80px;
+    fill: rgba(75, 85, 99, 1);
+}
+
+.custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .text span {
+    font-weight: 400;
+    /* display: none; */
+    color: rgba(75, 85, 99, 1);
+}
+
+
+.custum-file-upload .image-preview {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.custum-file-upload img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
 }
 
 .container .form .input-form select {

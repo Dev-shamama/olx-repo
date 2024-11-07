@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="left-side-step-form">
+            <div class="v-progress">
+                <ul>
+                    <li class="v-progress-item completed">Fill Order Form</li>
+                    <li class="v-progress-item inprogress">OTP - Verification</li>
+                    <li class="v-progress-item inprogress">Confirm Order</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="right-side-form">
+            <div class="review">
+                <div class="left-side">
+                    <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="--value:66;"
+                        data-value="2/3"></div>
+                </div>
+                <div class="right-side">
+                    <h4>OTP Verification</h4>
+                    <p>Next: Confirm Order</p>
+                </div>
+            </div>
+
+            <form action="" class="form">
+                <h2 class="heading-grid">Verify With OTP to Confirm Order!</h2>
+
+                <div class="password-grid" style="margin-top: 50px;">
+                    <div class="form-group">
+                        <input type="number" id="otp" class="registerForm" placeholder="Enter Otp">
+                        <label class="form-label" for="otp">Enter Otp</label>
+                        <button id="timer" onclick="startResendTimer()"></button>
+                    </div>
+                </div>
+                
+
+                <div class="btn-container">
+                    <button type="button" class="btn btn-proceed" >Verify </button>
+                    <button type="button" class="btn btn-support">Skip</button>
+                </div>
+
+
+
+            </form>
+
+            <div class="important-message" id="important_message" >
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, autem.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    let countdown = 120; // Set the countdown time (in seconds)
+let timer; // Variable to store the interval
+
+function startResendTimer() {
+    // Disable the button during the countdown
+    document.getElementById('timer').disabled = true;
+
+    // Display the initial countdown before starting the interval
+    document.getElementById('timer').textContent = `(${countdown}s)`;
+
+    // Start the countdown with a 1-second delay
+    setTimeout(() => {
+        timer = setInterval(updateTimer, 1000);
+    }, 0);
+}
+
+function updateTimer() {
+    const timerElement = document.getElementById('timer');
+    
+    if (countdown > 0) {
+        countdown--;
+        timerElement.textContent = `(${countdown}s)`;
+    } else {
+        // Re-enable the button
+        timerElement.disabled = false;
+        timerElement.textContent = 'Resend OTP';
+
+        // Reset countdown for the next attempt
+        countdown = 120;
+        
+        // Stop the timer
+        clearInterval(timer);
+    }
+}
+
+// Start the timer on page load
+startResendTimer();
+
+</script>
+<script src="./assets/js/main.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
+
+</html>

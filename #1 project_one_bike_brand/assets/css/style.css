@@ -21,8 +21,9 @@ a {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 30px 0;
+    padding: 30px 10px;
     background-color: rgb(245, 245, 245);
 }
 
@@ -33,7 +34,6 @@ a {
     justify-content: center;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
-    padding: 10px;
     border-radius: 10px;
 }
 
@@ -225,6 +225,33 @@ a {
     margin-top: 20px;
 }
 
+.bottom-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+}
+.bottom-btn .interestedOption {
+    margin-top: 0px !important;
+}
+.bottom-btn .interestedOption .interestedOptionBtn {
+    flex-direction: row !important;
+}
+
+.bottom-btn .interestedOption .interestedOptionBtn button {
+    min-width: 150px;
+}
+.bottom-btn .interestedOption .interestedOptionBtn p {
+    max-width: 632px;
+    font-size: 13px;
+}
+.bottom-btn .interestedOption .interestedOptionBtn p.active {
+    display: flex;
+    
+}
 
 
 
@@ -352,6 +379,7 @@ a {
 
 
 @media only screen and (max-width: 741px) {
+
     .interestedOption .interestedOptionBtn {
         flex-direction: column;
     }
@@ -546,11 +574,11 @@ input:focus {
     font-size: 12px;
 }
 
+
 .form .btn-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
+    width: 100%;   display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form .btn-container .btn {
@@ -563,8 +591,22 @@ input:focus {
     transition: all 0.3s ease;
     outline: none;
     border: 2px solid transparent;
+ 
 }
 
 .form .btn-container .btn:hover {
     background-color: var(--fav-color-dark);
+}
+
+
+.aitraz-message-content { 
+    display: none;
+    max-width: 626px;
+
+}
+
+
+
+.aitraz-message-content.active { 
+    display: block;
 }

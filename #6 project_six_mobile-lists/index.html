@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="camera-model" id="camera-model">
+        <video src="" id="video" autoplay></video>
+        <canvas hidden id="photo"></canvas>
+        <button id="capture-btn">Capture</button>
+    </div>
+
+    <div class="otp-model-container" id="otp-model-container">
+        <div class="otp-model">
+            <form action="">
+                <h3 style="text-align: center;" >OTP Verification</h3>
+
+                <div class="inputForm">
+                        <input type="number" id="phone" placeholder="Enter your phone number" disabled>
+                        <div class="error">number not valid</div>
+                        
+                </div>
+
+                <div class="inputForm">
+                    <div style="display: flex; align-items: center; justify-content: center;" >
+                        <input type="number" id="otp" placeholder="Enter your OTP">
+                        <button class="countdown" id="timer" style="display: flex; align-items: center;justify-content: center; ">120s</button>
+                    </div>
+                        <div class="error">Otp not verify</div>
+                        
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; gap: 6px" >
+                    <button type="button">Verify OTP</button>
+                <button type="button" id="close-otp-model">Cancel</button>
+                </div>
+                
+                
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="top-navigation">
+            <div class="arrow-side">
+                <svg fill="#000000" width="32px" height="32px" viewBox="0 0 24 24" id="left-arrow" data-name="Flat Line"
+                    xmlns="http://www.w3.org/2000/svg" class="icon flat-line">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <line id="primary" x1="21" y1="12" x2="3" y2="12"
+                            style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                        </line>
+                        <polyline id="primary-2" data-name="primary" points="6 9 3 12 6 15"
+                            style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                        </polyline>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="progress">
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="logout-btn">
+                <span>Logout</span>
+
+            </div>
+
+        </div>
+
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="logo">
+        </div>
+
+        <div class="plan-container">
+
+
+
+            <div class="item-layer" id="take-picture">
+                <div class="item item-1">
+                    <div class="left-side">
+                        <h3>Take Screenshot of</h3>
+                        <h3 class="subtitle">Daraz Wallet Balance</h3>
+                    </div>
+                    <div class="right-side">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path opacity="0.5"
+                                    d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                    fill="#00796a"></path>
+                                <path
+                                    d="M16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                    fill="#00796a"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="item-layer">
+                <div class="item item-2">
+                    <div class="left-side">
+                        <h3>Note Customer</h3>
+                        <h3 class="subtitle">Order Details</h3>
+
+                    </div>
+                    <div class="right-side">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path opacity="0.5"
+                                    d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                    fill="#00796a"></path>
+                                <path
+                                    d="M16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                    fill="#00796a"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item-layer" id="otp-model-open" >
+                <div class="item item-3">
+                    <div class="left-side">
+                        <h3>Verification</h3>
+                        <h3 class="subtitle">With OTP</h3>
+                    </div>
+                    <div class="right-side">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path opacity="0.5"
+                                    d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                    fill="#f00000"></path>
+                                <path
+                                    d="M8.96967 8.96967C9.26256 8.67678 9.73744 8.67678 10.0303 8.96967L12 10.9394L13.9697 8.96969C14.2626 8.6768 14.7374 8.6768 15.0303 8.96969C15.3232 9.26258 15.3232 9.73746 15.0303 10.0304L13.0607 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0304 15.0303C9.73746 15.3232 9.26258 15.3232 8.96969 15.0303C8.6768 14.7374 8.6768 14.2626 8.96969 13.9697L10.9394 12L8.96967 10.0303C8.67678 9.73744 8.67678 9.26256 8.96967 8.96967Z"
+                                    fill="#f00000"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item-layer">
+                <div class="item item-4">
+                    <div class="left-side">
+                        <h3>Go to Nearest</h3>
+                        <h3 class="subtitle">Showroom With Customer</h3>
+
+                    </div>
+                    <div class="right-side">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path opacity="0.5"
+                                    d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                    fill="#f00000"></path>
+                                <path
+                                    d="M8.96967 8.96967C9.26256 8.67678 9.73744 8.67678 10.0303 8.96967L12 10.9394L13.9697 8.96969C14.2626 8.6768 14.7374 8.6768 15.0303 8.96969C15.3232 9.26258 15.3232 9.73746 15.0303 10.0304L13.0607 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0304 15.0303C9.73746 15.3232 9.26258 15.3232 8.96969 15.0303C8.6768 14.7374 8.6768 14.2626 8.96969 13.9697L10.9394 12L8.96967 10.0303C8.67678 9.73744 8.67678 9.26256 8.96967 8.96967Z"
+                                    fill="#f00000"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+        <div class="bottom-navigation">
+            <button>Done!</button>
+            <button>Support</button>
+        </div>
+
+    </div>
+</body>
+<script src="./assets/js/main.js"></script>
+
+</html>

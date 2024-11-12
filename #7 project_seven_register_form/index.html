@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-heading">
+            <h2>Create Account</h2>
+            <p>Fill your information below or register with your social account</p>
+        </div>
+
+        <form action="">
+            <div class="inputForm">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Your Name">
+            </div>
+
+            <div class="inputForm">
+                <label for="name">CNIC #</label>
+                <input type="text" id="cnic" maxlength="14" onkeypress="formatNumber()" placeholder="CNIC E.g xxxxx-xxxxxxx-x">
+            </div>
+
+            <div class="inputForm">
+                <label for="name">Date Of Birth</label>
+                <input type="date">
+            </div>
+
+            <div class="inputForm">
+                <label for="name">WhatsApp #</label>
+                <input type="number" placeholder="WhatsApp # E.g 3xx xxx xxxx">
+            </div>
+
+            <div class="inputForm">
+                <label for="name">City</label>
+                <select name="" id="">
+                    <option value="Lahore">Lahore</option>
+                    <option value="Karachi">Karachi</option>
+                </select>
+            </div>
+
+            <div class="inputForm">
+                <label for="name">Area</label>
+                <input type="text" placeholder="Your Area E.g Scheme 33">
+            </div>
+
+            <div class="inputForm">
+                <label for="name">Password</label>
+                <div style="display: flex;justify-content: space-between; width: 100%; align-items: center; background-color: #eeeeee; border-radius: 8px; padding-right: 8px;">
+                    <input type="password" style="width: 100%;" id="password" placeholder="Your Password (Mix Characters)">
+                    <ion-icon name="eye-outline" id="togglePassword"
+                        style="display: flex;justify-content: center;align-items: center; max-width: 50px; background: #eeeeee;"
+                        onclick="togglePasswordVisibility()"></ion-icon>
+                </div>
+            </div>
+
+            <div class="progress" id="password-strength">
+                <div id="bar-1" class="progress-bar bar-1"></div>
+                <div id="bar-2" class="progress-bar bar-2"></div>
+                <div id="bar-3" class="progress-bar bar-3"></div>
+            </div>
+            <div class="passwordError">
+                <ul>
+                    <li>
+                        <span class="icon">
+                            <i id="lowerUpperCase" class='bx bx-x-circle'></i>
+                        </span>
+                        <small>Lowercase and Uppercase</small>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <i id="passwordNumber" class='bx bx-x-circle'></i>
+                        </span>
+                        <small>Number (0-9)</small>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <i id="specialChar" class='bx bx-x-circle'></i>
+                        </span>
+                        <small>Special Character (!@#$%^&*)</small>
+                    </li>
+
+                    <li>
+                        <span class="icon">
+                            <i id="eightChar" class='bx bx-x-circle'></i>
+                        </span>
+                        <small>At least 8 Character</small>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="agreeWithTerm">
+                <label class="cl-checkbox">
+                    <input checked="" type="checkbox">
+                    <span class="text">Agree with <span>Terms & Conditions</span></span>
+                  </label>
+            </div>
+
+            <div class="button-container">
+                <button class="back-btn">Back</button>
+                <button class="signUp-btn">Sign Up</button>
+            </div>
+
+        </form>
+
+        <div class="content__or-text">
+            <span></span>
+            <span>OR</span>
+            <span></span>
+          </div>
+
+          <div class="social-icon">
+            <div class="item">
+                <div class="icon">
+                    <svg preserveAspectRatio="xMidYMid" version="1.1" viewBox="0 0 256 315" height="20px" width="16px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                          <path fill="#000000" d="M213.803394,167.030943 C214.2452,214.609646 255.542482,230.442639 256,230.644727 C255.650812,231.761357 249.401383,253.208293 234.24263,275.361446 C221.138555,294.513969 207.538253,313.596333 186.113759,313.991545 C165.062051,314.379442 158.292752,301.507828 134.22469,301.507828 C110.163898,301.507828 102.642899,313.596301 82.7151126,314.379442 C62.0350407,315.16201 46.2873831,293.668525 33.0744079,274.586162 C6.07529317,235.552544 -14.5576169,164.286328 13.147166,116.18047 C26.9103111,92.2909053 51.5060917,77.1630356 78.2026125,76.7751096 C98.5099145,76.3877456 117.677594,90.4371851 130.091705,90.4371851 C142.497945,90.4371851 165.790755,73.5415029 190.277627,76.0228474 C200.528668,76.4495055 229.303509,80.1636878 247.780625,107.209389 C246.291825,108.132333 213.44635,127.253405 213.803394,167.030988 M174.239142,50.1987033 C185.218331,36.9088319 192.607958,18.4081019 190.591988,0 C174.766312,0.636050225 155.629514,10.5457909 144.278109,23.8283506 C134.10507,35.5906758 125.195775,54.4170275 127.599657,72.4607932 C145.239231,73.8255433 163.259413,63.4970262 174.239142,50.1987249"></path>
+                        </g>
+                      </svg>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="icon">
+                    <svg version="1.1" width="20" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <path style="fill:#FBBB00;" d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
+                            c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
+                            C103.821,274.792,107.225,292.797,113.47,309.408z"></path>
+                        <path style="fill:#518EF8;" d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451
+                            c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
+                            c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"></path>
+                        <path style="fill:#28B446;" d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
+                            c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
+                            c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"></path>
+                        <path style="fill:#F14336;" d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
+                            c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
+                            C318.115,0,375.068,22.126,419.404,58.936z"></path>
+                        
+                        </svg>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" fill="#4267B2"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+                </div>
+            </div>
+
+
+          </div>
+
+    </div>
+</body>
+<script src="./assets/js/main.js"></script>
+
+</html>

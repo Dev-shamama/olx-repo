@@ -47,8 +47,20 @@ close_otp_model.addEventListener("click", () => {
 const otp_model_open = document.getElementById("otp-model-open");
 otp_model_open.addEventListener("click", () => {
     document.getElementById('otp-model-container').style.display = "flex";
-    
 });
+
+document.getElementById('note-customer').addEventListener("click", () => {
+    // document.getElementById('note-customer-model-container').style.display = "flex";
+    window.location.href = "noteCustomer.html";
+});
+
+// document.getElementById('close-note-cusomter-model').addEventListener("click", () => {
+//     document.getElementById('note-customer-model-container').style.display = "none";
+// });
+
+
+
+
 
 
 let countdown = 120; // Set the countdown time (in seconds)
@@ -92,3 +104,19 @@ function updateTimer() {
 
 startResendTimer()
 
+
+
+// Cnic Number Masking
+function formatNumber() {
+    const input = document.getElementById("cnic");
+    let value = input.value.replace(/\D/g, ""); // Remove non-numeric characters
+
+    if (value.length > 5) {
+        value = `${value.slice(0, 5)}-${value.slice(5, 12)}`; // Add first dash
+    }
+    if (value.length > 12) {
+        value = `${value}-${value.slice(12, 13)}`; // Add second dash
+    }
+
+    input.value = value;
+}

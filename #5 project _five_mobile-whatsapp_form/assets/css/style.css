@@ -65,14 +65,16 @@
     margin-bottom: 12px;
 }
 
-.container .detail form .inputForm label {}
+.container .detail form .inputForm label {
+  margin: 0 0 10px 0;
+
+}
 
 .container .detail form .inputForm input {
     width: 100%;
     padding: 10px;
     border: 1px solid rgb(178 178 178);
     border-radius: 5px;
-    margin: 10px 0 0 0;
     outline: none;
     transition: all 100ms ease-in-out;
 }
@@ -94,3 +96,60 @@
     color: red;
     font-size: 13px;
 }
+
+
+
+  
+/* ======================================= */
+/* Progress bar */
+/* ======================================= */
+.progress {
+    transition: all 300ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 2px;
+  }
+  
+  .progress .progress-bar {
+    height: 4px;
+    background: transparent;
+    border-radius: 10px;
+    width: 100%;
+    background: #eeeeee;
+  }
+  
+  .progress .progress-bar.bar-1.active {
+    background: #e90f10;
+  }
+  
+  .progress .progress-bar.bar-2.active {
+    background: #ffad00;
+  }
+  
+  .progress .progress-bar.bar-3.active {
+    background: #02b502;
+  }
+  
+  .container form .passwordError {
+    padding: 12px 0;
+    text-align: left;
+  }
+  
+  .container form .passwordError ul li {
+    list-style: none;
+    color: #5b5b5b;
+  }
+  
+  .container form .passwordError ul li .icon i.bx.bxs-check-circle {
+    color: green;
+    font-size: 34px;
+  }
+  
+
+  .password-container {
+    display: none;
+  }

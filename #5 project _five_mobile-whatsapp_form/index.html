@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <div class="container">
         <div class="image">
@@ -23,11 +28,48 @@
                     <input type="text" id="whatsapp" placeholder="E.g 3xx xxx xxxx">
                     <div class="error">Some thing went wrong</div>
                 </div>
-                <button>Let's Get Started</button>
+
+                <div class="password-container" id="password-container">
+                    <div class="inputForm">
+                        <label for="name">Password</label>
+                        <div
+                            style="border: 1px solid rgb(178 178 178); display: flex;justify-content: space-between; width: 100%; align-items: center; border-radius: 8px; margin-right: 8px;">
+                            <input type="password" style="width: 100%; border: none" id="password"
+                                placeholder="Your Password (Mix Characters)">
+                            <ion-icon name="eye-outline" id="togglePassword"
+                                style="display: flex;justify-content: center;align-items: center; max-width: 50px; margin-right: 10px; font-size: 24px"
+                                onclick="togglePasswordVisibility()"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="nextFormCollapase">Let's Get Started</button>
             </form>
         </div>
 
     </div>
 </body>
 <script src="./assets/js/main.js"></script>
+
+<script>
+    const nextFormCollapase = document.getElementById('nextFormCollapase');
+    nextFormCollapase.addEventListener('click', () => {
+        document.getElementById('password-container').style.display = 'block'
+        nextFormCollapase.innerHTML = 'Login'
+    })
+
+    function togglePasswordVisibility() {
+        const passwordField = document.getElementById("password");
+        const toggleIcon = document.getElementById("togglePassword");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.setAttribute("name", "eye-off-outline");
+        } else {
+            passwordField.type = "password";
+            toggleIcon.setAttribute("name", "eye-outline");
+        }
+    }
+
+</script>
+
 </html>

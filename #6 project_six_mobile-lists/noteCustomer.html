@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/notecustomer.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-heading">
+            <h2>Note Customer</h2>
+        </div>
+
+        <form action="">
+            <div class="inputForm">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Your Name">
+            </div>
+
+            <div class="inputForm">
+                <label for="cnic">CNIC #</label>
+                <input type="text" id="cnic" maxlength="14" onkeypress="formatNumber()" placeholder="CNIC E.g xxxxx-xxxxxxx-x">
+                <p class="error">* CNIC Number should be 13 digit</p>
+            </div>
+
+            <div class="inputForm">
+                <label for="whatsApp">WhatsApp #</label>
+                <input type="number" placeholder="WhatsApp # E.g 3xx xxx xxxx">
+                <p class="error">* WhatsApp Number should be 11 digit</p>
+            </div>
+
+            <div class="inputForm">
+                <label for="dateOfBith">Date Of Birth</label>
+                <input type="date">
+            </div>
+
+            <div class="inputForm">
+                <label for="cnicExpiry">CNIC Expiry</label>
+                <input type="date">
+            </div>
+
+            <div class="inputForm">
+                <label for="name">Select Bike</label>
+                <select name="" id="">
+                    <option value="Lahore">Choose Bike</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Suzuki">Suzuki</option>
+                </select>
+            </div>
+
+
+
+            <div class="button-container">
+                <button type="button" class="back-btn" id="back" >Back</button>
+                <button class="signUp-btn">Submit</button>
+            </div>
+
+        </form>
+
+
+    </div>
+</body>
+<script src="./assets/js/main.js"></script>
+<script>
+    document.getElementById('back').addEventListener('click', () => {
+        window.location.href = 'index.html'
+    })
+</script>
+
+</html>

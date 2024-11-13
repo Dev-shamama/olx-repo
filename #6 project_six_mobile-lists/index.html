@@ -19,31 +19,86 @@
     <div class="otp-model-container" id="otp-model-container">
         <div class="otp-model">
             <form action="">
-                <h3 style="text-align: center;" >OTP Verification</h3>
+                <h3 style="text-align: center;">OTP Verification</h3>
 
                 <div class="inputForm">
-                        <input type="number" id="phone" placeholder="Enter your phone number" disabled>
-                        <div class="error">number not valid</div>
-                        
+                    <input type="number" id="phone" placeholder="Enter your phone number" disabled>
+                    <div class="error">number not valid</div>
+
                 </div>
 
                 <div class="inputForm">
-                    <div style="display: flex; align-items: center; justify-content: center;" >
+                    <div style="display: flex; align-items: center; justify-content: center;">
                         <input type="number" id="otp" placeholder="Enter your OTP">
-                        <button class="countdown" id="timer" style="display: flex; align-items: center;justify-content: center; ">120s</button>
+                        <button class="countdown" id="timer"
+                            style="display: flex; align-items: center;justify-content: center; ">120s</button>
                     </div>
-                        <div class="error">Otp not verify</div>
-                        
+                    <div class="error">Otp not verify</div>
+
                 </div>
-                
-                <div style="display: flex; justify-content: space-between; gap: 6px" >
+
+                <div style="display: flex; justify-content: space-between; gap: 6px">
                     <button type="button">Verify OTP</button>
-                <button type="button" id="close-otp-model">Cancel</button>
+                    <button type="button" id="close-otp-model">Cancel</button>
                 </div>
-                
-                
+
+
             </form>
         </div>
+    </div>
+
+    <div class="note-customer-model-container" id="note-customer-model-container">
+        <div class="note-customer-model">
+
+            <form action="">
+                <h3 style="text-align: center;">Note Customer</h3>
+
+                <div class="inputForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                    <div class="error">name are not valid</div>
+                </div>
+
+                <div class="inputForm">
+                    <label for="name">CNIC #</label>
+                    <input type="text"  id="cnic" maxlength="14" onkeypress="formatNumber()" placeholder="XXXXX-XXXXXXX-X">
+                    <div class="error">cnic are not valid</div>
+                </div>
+
+                <div class="inputForm">
+                    <label for="name">Date Of Birth</label>
+                    <input type="date" id="dateOfBirth">
+                    <div class="error">date of birth are not valid</div>
+                </div>
+
+                <div class="inputForm">
+                    <label for="name">CNIC Expiry</label>
+                    <input type="date" id="cnicExpiry">
+                    <div class="error">cnic expiry are not valid</div>
+                </div>
+
+
+                <div class="inputForm">
+                    <label for="name">Select Bike</label>
+                    <select name="selectBike" id="selectBike">
+                        <option value="" disabled selected>Choose of Bike</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Suzuki">Suzuki</option>
+                        <option value="Yamaha">Yamaha</option>
+                    </select>
+                    <div class="error">cnic expiry are not valid</div>
+                </div>
+
+
+                <div style="display: flex; justify-content: space-between; gap: 6px">
+                    <button type="button">Submit</button>
+                    <button type="button" id="close-note-cusomter-model">Close</button>
+                </div>
+
+
+            </form>
+        </div>
+
     </div>
 
     <div class="container">
@@ -111,7 +166,7 @@
             </div>
 
 
-            <div class="item-layer">
+            <div class="item-layer" id="note-customer">
                 <div class="item item-2">
                     <div class="left-side">
                         <h3>Note Customer</h3>
@@ -136,7 +191,7 @@
 
             </div>
 
-            <div class="item-layer" id="otp-model-open" >
+            <div class="item-layer" id="otp-model-open">
                 <div class="item item-3">
                     <div class="left-side">
                         <h3>Verification</h3>

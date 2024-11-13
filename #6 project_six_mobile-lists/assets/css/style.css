@@ -17,12 +17,6 @@ body {
     width: 94%;
     margin: 0 auto;
     margin: 30px 0;
-
-    /* display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    text-align: center; */
 }
 
 
@@ -206,14 +200,14 @@ video {
 }
 
 
-.otp-model-container {
+.otp-model-container,
+.note-customer-model-container {
     width: 100%;
     min-height: 100vh;
     background: #0000007b;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -222,34 +216,38 @@ video {
 
 }
 
-.otp-model-container {
-    
-}
-
-
-
-.otp-model-container .otp-model {
+.otp-model-container .otp-model{
     width: 90%;
     padding: 18px;
     border-radius: 10px;
     background-color: #ffffff;
-    
-
+}
+.note-customer-model-container .note-customer-model {
+    width: 90%;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    height: 95vh;
 }
 
 
-.otp-model-container .otp-model form {
+
+.otp-model-container .otp-model form,
+.note-customer-model-container .note-customer-model form {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-top: 10px;
 }
-.otp-model-container .otp-model form h3 {
+.otp-model-container .otp-model form h3 ,
+.note-customer-model-container .note-customer-model form h3{
     margin-bottom: 10px;
 }
 
-.otp-model-container .otp-model form .inputForm {
+.otp-model-container .otp-model form .inputForm,
+.note-customer-model-container .note-customer-model form .inputForm {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -258,23 +256,35 @@ video {
     margin-bottom: 12px;
 }
 
-.otp-model-container .otp-model form .inputForm label {}
+.note-customer-model-container .note-customer-model form .inputForm label {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
 
-.otp-model-container .otp-model form .inputForm input {
+.otp-model-container .otp-model form .inputForm input,
+.note-customer-model-container .note-customer-model form .inputForm input,
+.note-customer-model-container .note-customer-model form .inputForm select {
     width: 100%;
     padding: 10px;
     border: 1px solid rgb(178 178 178);
+    background: none;
     border-radius: 5px 0 0 5px;
     outline: none;
     transition: all 100ms ease-in-out;
 }
+.note-customer-model-container .note-customer-model form .inputForm input,
+.note-customer-model-container .note-customer-model form .inputForm select {
+    border-radius: 5px !important;
+}
 
-.otp-model-container .otp-model form .inputForm input:hover {
+.otp-model-container .otp-model form .inputForm input:hover,
+.note-customer-model-container .note-customer-model form .inputForm input:hover {
     border: 1px solid #00796A;
 
 }
 
-.otp-model-container .otp-model form button {
+.otp-model-container .otp-model form button,
+.note-customer-model-container .note-customer-model form button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -282,7 +292,8 @@ video {
     background: #00796A;
     border-radius: 4px;
 }
-.otp-model-container .otp-model form .error {
+.otp-model-container .otp-model form .error,
+.note-customer-model-container .note-customer-model form .error {
     color: red;
     font-size: 14px;
 }
@@ -306,3 +317,4 @@ video {
     border-radius: 0 5px 5px 0;
 
 }
+

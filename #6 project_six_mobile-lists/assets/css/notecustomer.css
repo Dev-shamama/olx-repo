@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container {
+    width: 80%;
+    margin: 30px 0;
+
+}
+
+.container .top-heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+
+.container .top-heading h2 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+
+.container form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    margin: 15px 0;
+}
+
+.container form .inputForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.container form .inputForm label {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.container form .inputForm input,
+.container form .inputForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(178 178 178);
+    background: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    transition: all 100ms ease-in-out;
+}
+
+.container form .inputForm input:hover,
+.container form .inputForm select:hover {
+
+    border: 1px solid #018786;
+}
+
+
+.container form .error{
+    color: red;
+    font-size: 14px;
+}
+
+.container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    background: #018786;
+    border-radius: 4px;
+}   
+
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    gap: 15px;
+  }
+.button-container .back-btn {
+    width:30%;
+}
+  .button-container .signUp-btn {
+    width:70%;
+    
+  }

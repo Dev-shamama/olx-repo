@@ -13,54 +13,76 @@
 <body>
 
   <div class="model-container" id="model-container">
-      <form class="form">
- 
-        <div class="note">
-          <label class="title" id="model-title" >Provide Required information</label>
+    <form class="form">
+
+      <div class="note">
+        <label class="title" id="model-title">Provide Required information</label>
+      </div>
+
+      <span id="success-message" class="success-message">Your Request Has Been Received Successfully. Our Team Will
+        Contact Within 3-7 Working Day's.</span>
+
+      <div class="input-form">
+        <div class="form-group">
+          <input type="text" id="name" class="registerForm" placeholder="Type Your Name">
+          <label class="form-label" for="name">Your Name</label>
         </div>
+      </div>
 
-        <span id="success-message" class="success-message">Your Request Has Been Received Successfully. Our Team Will Contact Within 3-7 Working Day's.</span>
-
-          <div class="input-form">
-            <div class="form-group">
-              <input type="text" id="name" class="registerForm" placeholder="Type Your Name">
-              <label class="form-label" for="name">Your Name</label>
-            </div>
-          </div>
-
-          <div class="input-form">
-            <div class="form-group">
-              <input type="number" id="whatsapp" class="registerForm" placeholder="03xx xxx xxxx">
-              <label class="form-label" for="whatsapp">WhatsApp #</label>
-            </div>
-          </div>
-
-          <div class="input-form profession-grid">
-            <div class="form-group">
-                <select name="" id="profession" class="registerForm" placeholder="Income Type">
-                    <option disabled selected value="">Choose Income Type</option>
-                    <option value="Private Job">Private Job</option>
-                    <option value="Government">Government</option>
-                    <option value="Semi Government">Semi Government</option>
-                    <option value="Army">Army</option>
-                    <option value="Navy">Navy</option>
-                    <option value="Lawyer">Lawyer</option>
-                    <option value="Press/Media">Press/Media</option>
-                    <option value="Retired">Retired</option>
-                    <option value="Small Business">Small Business</option>
-                    <option value="Large Business">Large Business</option>
-                    <option value="Shop">Shop</option>
-                    
-                </select>
-                <label class="form-label" for="profession">Profession</label>
-            </div>
+      <div class="input-form">
+        <div class="form-group">
+          <input type="number" id="whatsapp" class="registerForm" placeholder="03xx xxx xxxx">
+          <label class="form-label" for="whatsapp">WhatsApp #</label>
         </div>
+      </div>
 
-          <div class="btn-container" id="btn-container" >
-            <button type="button" id="acceptSubmitButton" class="btn btn-proceed">Proceed</button>
-            <button type="button" id="modelCloseButton" class="btn btn-proceed">Close</button>
-          </div>
-      </form>
+      <div class="input-form profession-grid">
+        <div class="form-group">
+          <select name="" id="profession" class="registerForm" placeholder="Income Type">
+            <option disabled selected value="">Choose Income Type</option>
+            <option value="Private Job">Private Job</option>
+            <option value="Government">Government</option>
+            <option value="Semi Government">Semi Government</option>
+            <option value="Army/Navy/Military/Rangers">Army/Navy/Military/Rangers</option>
+            <option value="lawyer">lawyer</option>
+            <option value="Press/Media">Press/Media</option>
+            <option value="Retired">Retired</option>
+            <option value="Small Business">Small Business</option>
+            <option value="Large Business">Large Business</option>
+            <option value="Shop">Shop</option>
+
+          </select>
+          <label class="form-label" for="profession">Profession</label>
+        </div>
+      </div>
+
+
+      <div class="input-form city-grid">
+        <div class="form-group">
+          <select name="" id="city" class="registerForm" placeholder="Income Type">
+            <option disabled selected value="">Choose City</option>
+            <option value="Karachi`">Karachi</option>
+            <option value="Lahore">Lahore</option>
+
+          </select>
+          <label class="form-label" for="city">City</label>
+        </div>
+      </div>
+
+
+      <div class="agreeWithTerm" id="agreeWithTerm">
+        <label class="cl-checkbox">
+          <input type="checkbox" id="acceptCheckbox">
+          <span class="text">I already have Ðaraz account.</span>
+        </label>
+      </div>
+
+      <div class="btn-container" id="btn-container">
+        <button type="button" id="acceptSubmitButton" disabled class="btn btn-proceed"
+          style="width: 100%;">Proceed</button>
+        <button type="button" id="modelCloseButton" class="btn btn-proceed">Close</button>
+      </div>
+    </form>
   </div>
 
   <div class="container">
@@ -85,12 +107,12 @@
 
           <!-- Unique Bike -->
           <div class="item-brand" onclick="openModelTab(event, 'tab4')">
-            <img src="./assets/img/yamaha.png" alt="brand">
+            <img src="./assets/img/unique.webp" alt="brand">
           </div>
 
           <!-- United Bike -->
           <div class="item-brand" onclick="openModelTab(event, 'tab5')">
-            <img src="./assets/img/yamaha.png" alt="brand">
+            <img src="./assets/img/united.png" alt="brand">
           </div>
 
         </div>
@@ -132,14 +154,13 @@
           <div class="item-text" onclick="openModelDetailTab(event, 'modelDetail8')">
             <span>CB150F</span>
           </div>
-
         </div>
         <!-- Model details for each bike in Tab 1 -->
         <div id="modelDetail1" class="bike-model-content">
           <h3>Honda CD70</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>30,000/- Advance</p>
+          <p>5,333/- | 26 Months</p>
+          <p>158,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -151,13 +172,11 @@
             </div>
           </div>
         </div>
-
-
         <div id="modelDetail2" class="bike-model-content">
           <h3>Honda Dream</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>34,000/- Advance</p>
+          <p>5,625/- | 24 Months</p>
+          <p>169,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -171,9 +190,9 @@
         </div>
         <div id="modelDetail3" class="bike-model-content">
           <h3>Honda Pridor</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>41,000/- Advance</p>
+          <p>7,000/- | 24 Months</p>
+          <p>209,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -187,9 +206,9 @@
         </div>
         <div id="modelDetail4" class="bike-model-content">
           <h3>Honda CG125</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>55,000/- Advance</p>
+          <p>7,500/- | 24 Months</p>
+          <p>235,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -203,9 +222,9 @@
         </div>
         <div id="modelDetail5" class="bike-model-content">
           <h3>Honda CG125SE</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>58,000/- Advance</p>
+          <p>6,250/- | 36 Months</p>
+          <p>283,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -219,9 +238,9 @@
         </div>
         <div id="modelDetail6" class="bike-model-content">
           <h3>Honda CG125 Gold</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>68,000/- Advance</p>
+          <p>6,250/- | 36 Months</p>
+          <p>293,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -235,9 +254,9 @@
         </div>
         <div id="modelDetail7" class="bike-model-content">
           <h3>Honda CB125F</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>76,000/- Advance</p>
+          <p>8,750/- | 36 Months</p>
+          <p>391,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -251,9 +270,9 @@
         </div>
         <div id="modelDetail8" class="bike-model-content">
           <h3>Honda CB150F</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>80,000/- Advance</p>
+          <p>11,500/- | 36 Months</p>
+          <p>494,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
 
           <div class="interestedOption active">
@@ -275,9 +294,6 @@
           <h2>Choose Suzuki</h2>
         </div>
         <div class="brand-container">
-          <div class="item-text" onclick="openModelDetailTab(event, 'modelDetail9')">
-            <span>GD110</span>
-          </div>
           <div class="item-text" onclick="openModelDetailTab(event, 'modelDetail10')">
             <span>GD110s</span>
           </div>
@@ -292,28 +308,11 @@
           </div>
         </div>
 
-
-        <div id="modelDetail9" class="bike-model-content">
-          <h3>SUZUKI GD110</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
-          <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
-          <div class="interestedOption active">
-            <h2>Choose Option</h2>
-            <div class="interestedOptionBtn">
-              <button class="btn btn-outline"><ion-icon name="calculator-outline"></ion-icon></button>
-              <button class="btn btn-primary imInterested">I'm interested</button>
-              <button class="btn btn-outline">Not interested</button>
-            </div>
-          </div>
-        </div>
-
         <div id="modelDetail10" class="bike-model-content">
           <h3>SUZUKI GD110S</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>-53,000/- Advance</p>
+          <p>-8,500/- | 36 Months</p>
+          <p>-359,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -327,9 +326,9 @@
 
         <div id="modelDetail11" class="bike-model-content">
           <h3>SUZUKI GSX125</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>85,000/- Advance</p>
+          <p>11,500/- | 36 Months</p>
+          <p>499,999/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -343,9 +342,9 @@
 
         <div id="modelDetail12" class="bike-model-content">
           <h3>SUZUKI GS150</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>56,000/- Advance</p>
+          <p>9,250/- | 36 Months</p>
+          <p>389,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -359,9 +358,9 @@
 
         <div id="modelDetail13" class="bike-model-content">
           <h3>SUZUKI GR150</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>70,000/- Advance</p>
+          <p>13,250/- | 36 Months</p>
+          <p>547,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -375,7 +374,7 @@
 
       </div>
 
-      <!-- Tab 3: Bike3 Models -->
+      <!-- Tab 3: Yamaha Models -->
       <div id="tab3" class="item choose-bike">
         <div class="heading">
           <h2>Choose Bike Yamaha</h2>
@@ -397,9 +396,9 @@
 
         <div id="modelDetail14" class="bike-model-content">
           <h3>Yamaha YB125Z</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>64,000/- Advance</p>
+          <p>10,000/- | 36 Months</p>
+          <p>424,500/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -413,9 +412,9 @@
 
         <div id="modelDetail15" class="bike-model-content">
           <h3>Yamaha YB125Z DX</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>67,000/- Advance</p>
+          <p>10,750/- | 36 Months</p>
+          <p>454,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -429,9 +428,9 @@
 
         <div id="modelDetail16" class="bike-model-content">
           <h3>Yamaha YBR125</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>70,000/- Advance</p>
+          <p>11,000/- | 36 Months</p>
+          <p>466,00/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -445,9 +444,9 @@
 
         <div id="modelDetail17" class="bike-model-content">
           <h3>Yamaha YBR125G</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>71,000/- Advance</p>
+          <p>11,500/- | 36 Months</p>
+          <p>485,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -462,7 +461,7 @@
 
       </div>
 
-      <!-- Tab 3: Bike3 Models -->
+      <!-- Tab 4: Unique Models -->
       <div id="tab4" class="item choose-bike">
         <div class="heading">
           <h2>Choose Bike Unique</h2>
@@ -474,11 +473,11 @@
 
         </div>
 
-        <div id="modelDetail14" class="bike-model-content">
+        <div id="modelDetail18" class="bike-model-content">
           <h3>Unique UD70</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>00,000/- Advance</p>
+          <p>00,000/- | 36 Months</p>
+          <p>00,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -495,7 +494,7 @@
 
       </div>
 
-
+      <!-- Tab 5: United Models -->
       <div id="tab5" class="item choose-bike">
         <div class="heading">
           <h2>Choose Bike United</h2>
@@ -507,11 +506,11 @@
 
         </div>
 
-        <div id="modelDetail14" class="bike-model-content">
+        <div id="modelDetail19" class="bike-model-content">
           <h3>Unique 125</h3>
-          <p>-60,000/- Advance</p>
-          <p>-10,000/- | 36 Months</p>
-          <p>-454,500/- Total Price</p>
+          <p>00,000/- Advance</p>
+          <p>00,000/- | 36 Months</p>
+          <p>00,000/- Total Price</p>
           <p><strong>Note:</strong> Iss k liay apka daraz shopping app pr account hona lazmi hai</p>
           <div class="interestedOption active">
             <h2>Choose Option</h2>
@@ -543,11 +542,6 @@
         </div>
       </div>
 
-     
-
-
-
-
 
     </div>
   </div>
@@ -556,17 +550,38 @@
   <script>
     const imInterested = document.querySelectorAll('.imInterested');
     const model_container = document.getElementById("model-container");
+    let modelCloseButton = document.getElementById('modelCloseButton')
+    const acceptCheckbox = document.getElementById('acceptCheckbox');
+    modelCloseButton.addEventListener("click", () => {
+      model_container.classList.remove("active");
+    })
+
+
+
     imInterested.forEach(e => {
       e.addEventListener("click", () => {
-        console.log('click me')
+        if (getCookie('bike_schedule_active')) {
+          window.location.href = "./success.html";
+          return;
+        }
         model_container.classList.add("active");
+
       })
     })
 
 
-    const professionFilter = ['Government', 'Semi Government', 'Army', 'Navy', 'Lawyer']
+    const professionFilter = ["Government", "Semi Government", "Army/Navy/Military/Rangers", "lawyer", "Press/Media", "Retired"]
 
     const acceptSubmitButton = document.getElementById('acceptSubmitButton');
+
+    acceptCheckbox.addEventListener("change", () => {
+      if (acceptCheckbox.checked) {
+        acceptSubmitButton.disabled = false
+      } else {
+        acceptSubmitButton.disabled = true
+      }
+    })
+
     acceptSubmitButton.addEventListener("click", () => {
       const name = document.getElementById('name').value;
       const whatsapp = document.getElementById('whatsapp').value;
@@ -576,27 +591,34 @@
         alert('All Field is required')
       } else {
 
+
         const input_form = document.querySelectorAll('.input-form');
         input_form.forEach(e => {
           e.style.display = "none";
         })
 
-        document.getElementById('acceptSubmitButton').style.display = "none" 
-        let modelCloseButton = document.getElementById('modelCloseButton')
+        document.getElementById('agreeWithTerm').style.display = 'none'
+
+        document.getElementById('acceptSubmitButton').style.display = "none"
         modelCloseButton.style.display = "flex"
 
         modelCloseButton.addEventListener("click", () => {
           model_container.classList.remove("active");
         })
 
-        
+
         document.getElementById('model-title').innerText = "Success - Request Submitted"
 
-        professionFilter.forEach(e => {
-          if (profession.includes(e)) {
-            document.getElementById("success-message").classList.add("active")
-          }
-        })
+        if (professionFilter.includes(profession)) {
+          console.log(profession);
+          document.getElementById("success-message").classList.add("active")
+          setCookie('bike_schedule_active', '1', 100000)
+          window.location.href = "gov.html"
+          return
+        } else {
+          window.location.href = "rsp.html"
+          return
+        }
 
         alert('Thank you');
       }
@@ -605,6 +627,24 @@
 
 
 
+    // Set a Cookie
+    function setCookie(cName, cValue, expDays) {
+      let date = new Date();
+      date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+    }
+    // Get a Cookie
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const cookiesArray = document.cookie.split(';');
+      for (let i = 0; i < cookiesArray.length; i++) {
+        let cookie = cookiesArray[i];
+        while (cookie.charAt(0) === ' ') cookie = cookie.substring(1);
+        if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length, cookie.length);
+      }
+      return null;
+    }
 
   </script>
   <script src="assets/js/main.js"></script>

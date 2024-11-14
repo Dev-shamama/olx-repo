@@ -561,10 +561,26 @@
     imInterested.forEach(e => {
       e.addEventListener("click", () => {
         if (getCookie('bike_schedule_active')) {
-          window.location.href = "./success.html";
-          return;
+          const input_form = document.querySelectorAll('.input-form');
+          input_form.forEach(e => {
+            e.style.display = "none";
+          })
+
+          document.getElementById('agreeWithTerm').style.display = 'none'
+
+          document.getElementById('acceptSubmitButton').style.display = "none"
+
+          document.getElementById('model-title').innerText = "Success - Request Submitted"
+          document.getElementById("success-message").classList.add("active")
+          model_container.classList.add("active");
+
+        } else {
+          model_container.classList.add("active");
         }
-        model_container.classList.add("active");
+        if (getCookie('bike_schedule_deactive')) {
+          window.location.href = "./rsp.html";
+        }
+
 
       })
     })
@@ -592,30 +608,29 @@
       } else {
 
 
-        const input_form = document.querySelectorAll('.input-form');
-        input_form.forEach(e => {
-          e.style.display = "none";
-        })
-
-        document.getElementById('agreeWithTerm').style.display = 'none'
-
-        document.getElementById('acceptSubmitButton').style.display = "none"
-        modelCloseButton.style.display = "flex"
-
-        modelCloseButton.addEventListener("click", () => {
-          model_container.classList.remove("active");
-        })
-
-
-        document.getElementById('model-title').innerText = "Success - Request Submitted"
-
         if (professionFilter.includes(profession)) {
-          console.log(profession);
+          const input_form = document.querySelectorAll('.input-form');
+          input_form.forEach(e => {
+            e.style.display = "none";
+          })
+
+          document.getElementById('agreeWithTerm').style.display = 'none'
+
+          document.getElementById('acceptSubmitButton').style.display = "none"
+          modelCloseButton.style.display = "flex"
+
+          modelCloseButton.addEventListener("click", () => {
+            model_container.classList.remove("active");
+          })
+
+
+          document.getElementById('model-title').innerText = "Success - Request Submitted"
           document.getElementById("success-message").classList.add("active")
           setCookie('bike_schedule_active', '1', 100000)
-          window.location.href = "gov.html"
+          // window.location.href = "gov.html"
           return
         } else {
+          setCookie('bike_schedule_deactive', '1', 100000)
           window.location.href = "rsp.html"
           return
         }

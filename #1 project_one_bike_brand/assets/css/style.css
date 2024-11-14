@@ -16,14 +16,114 @@ a {
     text-decoration: none;
 }
 
+.top-chat-menu {
+    width: 100%;
+    padding: 8px 20px;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top-chat-menu .left-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.top-chat-menu .left-side .icon-arrow {
+    color: var(--fav-color);
+    font-size: 24px;
+}
+.top-chat-menu .left-side .icon-arrow ion-icon {
+    display: flex;
+}
+
+.top-chat-menu .left-side .profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-chat-menu .left-side .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.top-chat-menu .left-side .profile-info p{
+    font-weight: 600;
+    color: var(--fav-color-dark);
+}
+.top-chat-menu .left-side .profile-info small{
+    color: #696969;
+    letter-spacing: 1.1px;
+}
+
+
+.top-chat-menu .right-side  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+.top-chat-menu .right-side .icon {
+    color: var(--fav-color);
+    font-size: 24px;
+}
+
+.bottom-chat-menu {
+    width: 97%;
+    padding: 4px 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    background-color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-chat-menu ion-icon {
+    display: flex;
+    font-size: 20px;
+    color: var(--fav-color);
+}
+.bottom-chat-menu .left-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.bottom-chat-menu .left-side .inputField {
+    width: 100%;
+}
+.bottom-chat-menu .left-side .inputField input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.bottom-chat-menu .right-side .icon.send {
+    padding-left: 15px;
+}
 .container {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    padding: 30px 10px;
     background-color: rgb(245, 245, 245);
 }
 
@@ -64,6 +164,10 @@ a {
     margin-bottom: 30px;
     color: #282828;
     text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container .wrapper .item .brand-container {
@@ -200,19 +304,6 @@ a {
     color: var(--fav-color);
 }
 
-.interestedOption .interestedOptionBtn .btn.btn-primary:hover {
-    border: 2px solid var(--fav-color);
-    background-color: transparent;
-    color: var(--fav-color);
-}
-
-.interestedOption .interestedOptionBtn .btn.btn-outline:hover {
-    border: 2px solid var(--fav-color);
-    background-color: var(--fav-color);
-    color: white;
-}
-
-
 .choose-option {
     display: flex;
     justify-content: center;
@@ -249,7 +340,6 @@ a {
 
 .bottom-btn .interestedOption .interestedOptionBtn p {
     max-width: 632px;
-    font-size: 13px;
 }
 
 .bottom-btn .interestedOption .interestedOptionBtn p.active {
@@ -284,7 +374,7 @@ a {
     }
 
     .container {
-        min-height: 0;
+        /* min-height: 0; */
     }
 
     .container .wrapper {
@@ -606,7 +696,7 @@ input:focus {
 
 .aitraz-message-content {
     display: none;
-    max-width: 626px;
+    max-width: 1200px;
 
 }
 

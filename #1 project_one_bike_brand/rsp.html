@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
+
 <body>
-    <h1>rsp.html</h1>
+
+  <div class="container">
+    <div class="wrapper">
+
+      <!-- Brand Selection Section -->
+      <div class="item" style="border: none; min-height: unset;">
+        <div class="heading">
+          <h3 style="max-width: 600px" >Hum Online Store Wale Hain.
+            Shop Ya Showroom Wale Nahi.
+            Kya Apko Online Se Aitraz Hai?</h3>
+          </div>
+          <div class="bottom-btn" style="padding: 0px">
+            <div class="interestedOption">
+              <div class="interestedOptionBtn">
+                <button class="artraz-button btn btn-primary" id="aitrazBtnNahi" >Aitraz Nahi!</button>
+                <button class="artraz-button btn btn-outline" id="aitrazBtnHai">Aitraz Hai</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div id="aitraz-message-content" class="bottom-btn aitraz-message-content" style="margin-top: 10px; border-radius: 8px; padding: 10px" >
+        <div class="interestedOption">
+          <div class="interestedOptionBtn">
+            <h3 id="aitraz-message" style="text-align: center;"></h3>
+          </div>
+          <div class="bottom-btn">
+            <div class="interestedOption">
+              <div class="interestedOptionBtn">
+                <button class="artraz-button btn btn-primary" id="aitrazBtnNahi" >Aitraz Nahi!</button>
+                <button class="artraz-button btn btn-outline" id="aitrazBtnHai">Aitraz Hai</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  
+  <script>
+    const imInterested = document.querySelectorAll('.imInterested');
+    const model_container = document.getElementById("model-container");
+    imInterested.forEach(e => {
+      e.addEventListener("click", () => {
+        console.log('click me')
+        model_container.classList.add("active");
+      })
+    })
+
+
+    const professionFilter = ['Government', 'Semi Government', 'Army', 'Navy', 'Lawyer']
+
+    const acceptSubmitButton = document.getElementById('acceptSubmitButton');
+    acceptSubmitButton.addEventListener("click", () => {
+      const name = document.getElementById('name').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      const profession = document.getElementById('profession').value;
+
+      if (name == "" || whatsapp == "" || profession == "") {
+        alert('All Field is required')
+      } else {
+
+        const input_form = document.querySelectorAll('.input-form');
+        input_form.forEach(e => {
+          e.style.display = "none";
+        })
+
+        document.getElementById('acceptSubmitButton').style.display = "none" 
+        let modelCloseButton = document.getElementById('modelCloseButton')
+        modelCloseButton.style.display = "flex"
+
+        modelCloseButton.addEventListener("click", () => {
+          model_container.classList.remove("active");
+        })
+
+        
+        document.getElementById('model-title').innerText = "Success - Request Submitted"
+
+        professionFilter.forEach(e => {
+          if (profession.includes(e)) {
+            document.getElementById("success-message").classList.add("active")
+          }
+        })
+
+        alert('Thank you');
+      }
+
+    })
+
+
+
+
+  </script>
+
+  <script>
+    const aitraz_message_content =  document.getElementById("aitraz-message-content");
+    const aitrazBtnNahi =  document.getElementById("aitrazBtnNahi");
+    const aitrazBtnHai =  document.getElementById("aitrazBtnHai");
+    
+    const aitraz_message =  document.getElementById("aitraz-message");
+
+    aitrazBtnNahi.addEventListener("click", () => {
+      aitraz_message_content.classList.add("active");
+      aitraz_message.innerText = 'Daraz Account Hona Chaiy Usper Order Nahi Krna. Bike Milne K Baad Ðaraz Wallet Se Payment Krni He. iss Se Humein Profit Milega Jisky Waja Se Hm Apse Markup Ya Extra Charges Nahi Lenge.'
+    })
+
+    aitrazBtnHai.addEventListener("click", () => {
+      aitraz_message_content.classList.add("active");
+      aitraz_message.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nihil cupiditate alias at suscipit enim.'
+    })
+  </script>
+
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

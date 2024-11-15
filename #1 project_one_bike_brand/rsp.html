@@ -14,58 +14,94 @@
 
 
   <div class="container">
-    <div class="top-chat-menu">
-      <div class="left-side">
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <div class="top-chat-menu">
+        <div class="toper-container" style="display: flex;flex-direction: row; margin-bottom: 0;">
+          <div class="left-side">
 
-        <div class="icon-arrow">
-          <ion-icon name="chevron-back-outline"></ion-icon>
-        </div>
+            <div class="icon-arrow">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </div>
 
-        <div class="profile">
-          <img src="./assets/img/profile.png" alt="profile">
-        </div>
+            <div class="profile">
+              <img src="./assets/img/profile.png" alt="profile">
+            </div>
 
-        <div class="profile-info">
-          <p>Representative</p>
-          <small>Online</small>
-        </div>
+            <div class="profile-info">
+              <p>Representative</p>
+              <small>Online</small>
+            </div>
 
-      </div>
-      <div class="right-side">
-        <div class="icon icon-call">
-          <ion-icon name="call"></ion-icon>
-        </div>
-
-        <div class="icon icon-videocam">
-          <ion-icon name="videocam"></ion-icon>
-        </div>
-
-      </div>
-
-    </div>
-    <div>
-      <div class="wrapper">
-
-        <!-- Brand Selection Section -->
-        <div class="item" style="border: none; min-height: unset;">
-          <div class="heading">
-            <h3 style="max-width: 600px">Order Kaise Krna Hai?</h3>
-            <p style="margin: 15px 0;">Ðaraz Account Hona Chaiy. Order Form Fill Krna Hai. Same Ya Next Day Rider Khud
-              Ayga. Pehle Bike Milegi Uss
-              K Baad Ðaraz Account Se Payment Krna Hogi. Kya Apko iss Se Koi Aitraz Hai?</p>
           </div>
-          <div class="bottom-btn" style="padding: 0px">
-            <div class="interestedOption">
-              <div class="interestedOptionBtn">
-                <button class="artraz-button btn btn-primary" id="aitrazBtnNahi">Koi Aitraz Nahi!</button>
-                <button class="artraz-button btn btn-outline" id="aitrazBtnHai">Aitraz Hai</button>
+          <div class="right-side">
+            <div class="icon icon-call">
+              <ion-icon name="call"></ion-icon>
+            </div>
+
+            <div class="separate">|</div>
+
+            <div class="icon icon-videocam">
+              <ion-icon name="close-circle"></ion-icon>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="info">
+          <p>Please Wait We're Connecting You</p>
+          <p>to the Next Available Representative.</p>
+        </div>
+
+
+
+      </div>
+
+      <div style="width: 88%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div class="wrapper rsp">
+
+          <!-- Brand Selection Section -->
+          <div class="item rsp" style="border: none; min-height: unset; margin-top: 0;">
+            <div class="heading rsp">
+              <h3 style="max-width: 600px; align-items: flex-start;">Order Kaise Krna Hai?</h3>
+              <p style="margin: 8px 0; text-align: left; font-size: 15px;">Ðaraz Account Hona Chaiy. Order Form Fill
+                Krna Hai. Same Ya Next Day Rider Khud
+                Ayga. Pehle Bike Milegi Uss
+                K Baad Ðaraz Account Se Payment Krna Hogi. Kya Apko iss Se Koi Aitraz Hai?</p>
+            </div>
+            <div class="bottom-btn" style="padding: 0px">
+              <div class="interestedOption rsp">
+                <div class="interestedOptionBtn">
+                  <button class="artraz-button btn" id="aitrazBtnNahi">Koi Aitraz Nahi!</button>
+                  <button class="artraz-button btn" id="aitrazBtnHai">Aitraz Hai</button>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
-      </div>
-      <div id="aitraz-message-content" class="bottom-btn aitraz-message-content"
+        <div class="wrapper rsp " id="aitraz-message-content">
+
+          <!-- Brand Selection Section -->
+          <div class="item rsp" style="border: none; min-height: unset; margin-top: 0;">
+            <div class="heading rsp">
+              <h3 id="aitraz-title" style="max-width: 600px; align-items: flex-start; text-align: left;"></h3>
+              <p id="aitraz-message" style="margin: 8px 0; text-align: left; font-size: 15px;"></p>
+            </div>
+            <div class="bottom-btn" style="padding: 0px">
+              <div class="interestedOption rsp">
+                <div class="interestedOptionBtn">
+                  <button class="artraz-button btn" id="aitrazBtnNahiSub">Koi Aitraz Nahi!</button>
+                  <button class="artraz-button btn" id="aitrazBtnHaiSub">Aitraz Hai</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- <div id="aitraz-message-content" class="bottom-btn aitraz-message-content"
         style="margin-top: 10px; border-radius: 8px; padding: 10px">
         <div class="interestedOption">
           <div class="interestedOptionBtn" style="flex-direction: column !important; text-align: center; ">
@@ -82,6 +118,9 @@
           </div>
 
         </div>
+      </div> -->
+
+
       </div>
     </div>
 

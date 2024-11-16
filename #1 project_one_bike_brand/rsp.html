@@ -8,44 +8,68 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/svelte-smooth-popover@1.0.9/index.min.js
+"></script>
 </head>
 
 <body>
 
+  <div class="model-container" id="model-container">
+    <div class="form rsp">
+      <h3>Confirmation!</h3>
+        <p style="margin: 10px 0;">Are You Sure to End Chat?</p>
+        <div class="btn-container">
+          <button class="btn" id="yes-btn">Yes</button>
+          <button class="btn" id="no-btn">No</button>
+        </div>
+    </div>
+  </div>
+
 
   <div class="container">
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-      <div class="top-chat-menu">
-        <div class="toper-container" style="display: flex;flex-direction: row; margin-bottom: 0;">
-          <div class="left-side">
+    <div class="top-chat-menu">
+      <div class="toper-container" style="display: flex;flex-direction: row; margin-bottom: 0;">
+        <div class="left-side">
 
-            <div class="icon-arrow">
-              <ion-icon name="chevron-back-outline"></ion-icon>
-            </div>
-
-            <div class="profile">
-              <img src="./assets/img/profile.png" alt="profile">
-            </div>
-
-            <div class="profile-info">
-              <p>Representative</p>
-              <small>Online</small>
-            </div>
-
+          <div class="icon-arrow" onclick="window.location.href = 'index.html'">
+            <ion-icon name="chevron-back-outline"></ion-icon>
           </div>
-          <div class="right-side">
-            <div class="icon icon-call">
-              <ion-icon name="call"></ion-icon>
-            </div>
-
-            <div class="separate">|</div>
-
-            <div class="icon icon-videocam">
-              <ion-icon name="close-circle"></ion-icon>
-            </div>
-
+          <input type="file" hidden>
+          <div class="profile">
+            <img src="./assets/img/profile.png" alt="profile">
           </div>
+
+          <div class="profile-info">
+            <p>Representative</p>
+            <small>Online</small>
+          </div>
+
         </div>
+        <div class="right-side">
+          <div class="icon icon-call con-tooltip bottom">
+            <ion-icon name="call"></ion-icon>
+            <div class="tooltip">
+              <p>Not Available</p>
+            </div>
+          </div>
+
+          <div class="separate">|</div>
+
+          <div class="icon icon-videocam" id="chat-end-btn">
+            <ion-icon name="close-circle"></ion-icon>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+    <div class="chat-container">
+      <div class="chat-content">
 
         <div class="info">
           <p>Please Wait We're Connecting You</p>
@@ -56,13 +80,8 @@
           <span></span>
           <span>Chat Started</span>
           <span></span>
-      </div>
+        </div>
 
-
-
-      </div>
-
-      <div style="width: 92%; display: flex; justify-content: center; align-items: flex-start; flex-direction: column; background-color: #f5f5f5;">
         <div class="wrapper rsp">
           <div class="time-content">
             <div></div>
@@ -90,7 +109,7 @@
 
         </div>
 
-        <div class="wrapper rsp left" id="userClickButton" >
+        <div class="wrapper rsp left" id="userClickButton">
           <div class="time-content">
             <div></div>
             <small>04:49PM</small>
@@ -108,6 +127,26 @@
 
         </div>
 
+ 
+        <div class="wrapper rsp" id="userReplyLoadingStatus">
+          <div class="time-content">
+            <div></div>
+            <small>04:49PM</small>
+          </div>
+          <!-- Brand Selection Section -->
+          <div class="item rsp" style="border: none; min-height: unset; margin-top: 0; padding: 10px 0;">
+            <div class="bottom-btn" style="padding: 0px">
+              <div class="interestedOption rsp">
+                <div class="interestedOptionBtn rsp right" style="margin-top: 0;">
+                  <button class="artraz-button btn" id="userReplyLoadingStatusMessage" style="width: 100%;display: flex; justify-content: flex-start; align-items: left;">Loading...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
         <div class="wrapper rsp" id="aitraz-message-content">
           <div class="time-content">
             <div></div>
@@ -116,7 +155,8 @@
           <!-- Brand Selection Section -->
           <div class="item rsp" style="border: none; min-height: unset; margin-top: 0;">
             <div class="heading rsp">
-              <h3 id="aitraz-title" style="max-width: 600px; align-items: flex-start; text-align: left; font-size: 13px;"></h3>
+              <h3 id="aitraz-title"
+                style="max-width: 600px; align-items: flex-start; text-align: left; font-size: 13px;"></h3>
               <p id="aitraz-message" style="margin: 8px 0; text-align: left; font-size: 13px;"></p>
             </div>
             <div class="bottom-btn" style="padding: 0px">
@@ -131,47 +171,40 @@
 
         </div>
 
-      
-
-
-        <!-- <div id="aitraz-message-content" class="bottom-btn aitraz-message-content"
-        style="margin-top: 10px; border-radius: 8px; padding: 10px">
-        <div class="interestedOption">
-          <div class="interestedOptionBtn" style="flex-direction: column !important; text-align: center; ">
-            <h3 id="aitraz-title"></h3>
-            <p id="aitraz-message" style="text-align: center;"></p>
-          </div>
-          <div class="bottom-btn">
-            <div class="interestedOption">
-              <div class="interestedOptionBtn">
-                <button class="artraz-button btn btn-primary" id="aitrazBtnNahiSub"></button>
-                <button class="artraz-button btn btn-outline" id="aitrazBtnHaiSub"></button>
-              </div>
-            </div>
-          </div>
-
+        <div class="content__or-text" id="chatClosed" style="display: none;">
+          <span></span>
+          <span>Chat Closed</span>
+          <span></span>
         </div>
-      </div> -->
-
 
       </div>
     </div>
 
     <div class="bottom-chat-menu">
-      <div class="left-side">
-        <div class="icon happy">
-          <ion-icon name="happy"></ion-icon>
+      <div class="imageAttach" id="imageAttachPreview">
+        <div class="image">
+          <img src="./assets/img/profile.png" id="imageAttachPreviewImage" alt="profile">
         </div>
-        <div class="icon image">
-          <ion-icon name="image"></ion-icon>
-        </div>
-        <div class="inputField">
-          <input type="text" placeholder="Type Your Message...">
-        </div>
+        <div class="imageTitle" id="imageAttachTitle" >screenshot.png</div>
       </div>
-      <div class="right-side">
-        <div class="icon send">
-          <ion-icon name="send"></ion-icon>
+      <div
+        style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; align-items: center;">
+        <div class="left-side">
+          <div class="icon happy">
+            <ion-icon name="happy"></ion-icon>
+          </div>
+          <input type="file" id="imageAttachField" hidden>
+          <div class="icon image" id="imageAttachFileField">
+            <ion-icon name="image"></ion-icon>
+          </div>
+          <div class="inputField">
+            <input type="text" placeholder="Type Your Message..." id="chatInputField">
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="icon send">
+            <ion-icon name="send"></ion-icon>
+          </div>
         </div>
       </div>
     </div>
@@ -179,7 +212,32 @@
   </div>
 
   <script>
-    
+    const model_container = document.getElementById('model-container');
+    const chat_end_btn = document.getElementById('chat-end-btn');
+    chat_end_btn.addEventListener('click', () => {
+      model_container.classList.add('active');
+    })
+
+    const yes_btn = document.getElementById('yes-btn');
+    const no_btn = document.getElementById('no-btn');
+
+    yes_btn.addEventListener('click', () => {
+      // window.location.href = 'end.html';
+      document.getElementById('chatClosed').style.display = 'flex';
+      document.getElementById('chatInputField').value = '';
+      document.getElementById('chatInputField').disabled = true;
+      model_container.classList.remove('active');
+    })
+
+    no_btn.addEventListener('click', () => {
+      model_container.classList.remove('active');
+
+    })
+
+  </script>
+
+  <script>
+
     const aitraz_message_content = document.getElementById("aitraz-message-content");
     const aitrazBtnNahi = document.getElementById("aitrazBtnNahi");
     const aitrazBtnHai = document.getElementById("aitrazBtnHai");
@@ -188,10 +246,15 @@
     const aitrazBtnNahiSub = document.getElementById("aitrazBtnNahiSub");
     const aitrazBtnHaiSub = document.getElementById("aitrazBtnHaiSub");
 
+    const userReplyLoadingStatus = document.getElementById('userReplyLoadingStatus');
+
     const aitraz_title = document.getElementById("aitraz-title");
     const aitraz_message = document.getElementById("aitraz-message");
 
     aitrazBtnNahi.addEventListener("click", () => {
+      userReplyLoadingStatus.style.display = 'flex';
+      setTimeout(() => {
+      userReplyLoadingStatus.style.display = 'none';
       aitraz_message_content.classList.add("active");
       aitraz_title.innerText = "installment Kaise Pay Hogi?"
       aitraz_message.innerText = `Hr Month installment Ðaraz Account Se Bhe Pay Kr Skte Hein Aur Rider Bhe Aa K Collect Kr Skta Hai Jisky Receipt Bhe Frahm Ky Jaygi.`
@@ -199,6 +262,11 @@
       aitrazBtnHaiSub.innerHTML = "Bike Nahi Chaiy"
       buttonStateHandle.innerHTML = "Koi Aitraz Nahi!";
       userClickButton.style.display = "flex";
+      aitrazBtnNahi.disabled = true
+      aitrazBtnHai.disabled = true
+      }, 2000);
+      
+
 
     })
 
@@ -211,8 +279,36 @@
       aitrazBtnHaiSub.innerHTML = "Filhal Nahi Chaiy"
       buttonStateHandle.innerHTML = "Aitraz Ha!";
       userClickButton.style.display = "flex";
+      aitrazBtnNahi.disabled = true
+      aitrazBtnHai.disabled = true
 
     })
+  </script>
+
+  <script>
+    const imageAttachFileField = document.getElementById('imageAttachFileField');
+    imageAttachFileField.addEventListener('click', () => {
+      document.getElementById('imageAttachField').click();
+    })
+
+    const imageAttachField = document.getElementById('imageAttachField');
+    imageAttachField.addEventListener('change', () => {
+      const file = imageAttachField.files[0];
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        const fileNameSlice = getFileNameBounded(file.name, 10, 8);
+        document.getElementById('imageAttachTitle').innerText = fileNameSlice;
+        document.getElementById('imageAttachPreview').classList.add('active');
+        document.getElementById('imageAttachPreviewImage').src = reader.result;
+      });
+      reader.readAsDataURL(file);
+    })
+
+    function getFileNameBounded(filename, startLength, endLength) {
+    const start = filename.substring(0, startLength);
+    const end = filename.slice(-endLength);
+    return `${start}...${end}`;
+}
   </script>
 
   <script src="assets/js/main.js"></script>

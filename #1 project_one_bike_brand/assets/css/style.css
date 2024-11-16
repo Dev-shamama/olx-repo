@@ -17,26 +17,29 @@ a {
 }
 
 .top-chat-menu {
-    width: 88%;
-
+    width: 100%;
+    position: fixed;
+    z-index: 999;
 }
+
 .top-chat-menu .toper-container {
     background-color: #ffff;
-    padding: 8px 7px 8px 0;
+    padding: 8px 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 10px 0;
     border-radius: 8px;
 
 }
 
-.top-chat-menu .info {
+.info {
+    width: 100%;
     padding: 12px;
     text-align: center;
 }
 
-.top-chat-menu .info p {
+.info p {
+    width: 100%;
     font-size: 13px;
 }
 
@@ -52,6 +55,7 @@ a {
     color: var(--fav-color);
     font-size: 24px;
 }
+
 .top-chat-menu .left-side .icon-arrow ion-icon {
     display: flex;
 }
@@ -65,57 +69,128 @@ a {
     justify-content: center;
     align-items: center;
 }
+
 .top-chat-menu .left-side .profile img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.top-chat-menu .left-side .profile-info p{
+.top-chat-menu .left-side .profile-info p {
     font-weight: 600;
     color: var(--fav-color-dark);
 }
-.top-chat-menu .left-side .profile-info small{
+
+.top-chat-menu .left-side .profile-info small {
     color: #00e500;
     letter-spacing: 1.1px;
 }
 
 
-.top-chat-menu .right-side  {
+.top-chat-menu .right-side {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
     gap: 10px;
 }
-.top-chat-menu .right-side  .separate {
+
+.top-chat-menu .right-side .separate {
     color: var(--fav-color);
     font-weight: 700;
     font-size: 28px;
 }
+
 .top-chat-menu .right-side .icon {
     color: var(--fav-color);
     font-size: 24px;
 }
+
 .top-chat-menu .right-side .icon ion-icon {
     display: flex;
 }
 
+
+.chat-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    margin-top: 55px;
+}
+
+.chat-content {
+    width: 92%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    overflow: scroll;
+    margin-bottom: 50px;
+}
+
+.chat-content::-webkit-scrollbar {
+    width: 0px;
+}
+
 .bottom-chat-menu {
-    width: 88%;
+    width: 100%;
     padding: 4px 10px;
-    margin-bottom: 12px;
     border-radius: 8px;
     background-color: #ffff;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+
+.imageAttach {
+    width: 100%;
+    background: #f5f5f5;
+    margin: 10px 0;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    display: none;
+}
+
+.imageAttach.active {
+    display: flex;
+}
+
+.imageAttach .image {
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
+
+.imageAttach .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .bottom-chat-menu ion-icon {
     display: flex;
     font-size: 20px;
     color: var(--fav-color);
 }
+
 .bottom-chat-menu .left-side {
     display: flex;
     justify-content: flex-start;
@@ -129,6 +204,7 @@ a {
 .bottom-chat-menu .left-side .inputField {
     width: 100%;
 }
+
 .bottom-chat-menu .left-side .inputField input {
     width: 100%;
     border: none;
@@ -140,11 +216,12 @@ a {
 .bottom-chat-menu .right-side .icon.send {
     padding-left: 15px;
 }
+
 .container {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     background-color: rgb(245, 245, 245);
@@ -161,6 +238,7 @@ a {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
+
 .container .wrapper.rsp {
     align-items: flex-start !important;
     justify-content: flex-start !important;
@@ -197,7 +275,7 @@ a {
 }
 
 .container .wrapper.rsp .item {
- 
+
     background-color: #f5f5f5;
     width: 66%;
 }
@@ -354,6 +432,10 @@ a {
     margin-top: 10px;
 }
 
+.interestedOption.rsp .interestedOptionBtn {
+    flex-direction: column !important;
+}
+
 .interestedOption .interestedOptionBtn .btn {
     padding: 8px 16px;
     border-radius: 4px;
@@ -370,6 +452,7 @@ a {
     color: black;
     border-radius: 8px;
     border: none;
+    width: 100%;
 }
 
 .interestedOption .interestedOptionBtn .btn.btn-primary {
@@ -414,10 +497,10 @@ a {
 
 .bottom-btn .interestedOption .interestedOptionBtn {
     width: 100%;
-    flex-direction: row !important;
+    /* flex-direction: row !important; */
 }
 
-.bottom-btn .interestedOption .interestedOptionBtn.rsp.right{
+.bottom-btn .interestedOption .interestedOptionBtn.rsp.right {
     align-items: flex-end;
     justify-content: flex-end;
 }
@@ -441,6 +524,7 @@ a {
 
 
 @media only screen and (min-width: 500px) {
+    
     .container .wrapper {
         max-width: 1200px !important;
         flex-direction: row;
@@ -472,6 +556,9 @@ a {
         background-color: rgb(245, 245, 245);
     }
 
+    .container.index {
+        justify-content: flex-start !important;
+    }
     .container {
         /* min-height: 0; */
     }
@@ -480,6 +567,7 @@ a {
         min-width: 100% !important;
         max-width: 100% !important;
     }
+
     .container .wrapper.rsp {
         width: 88%;
 
@@ -633,15 +721,15 @@ a {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: 9999;
     transition: all 300ms ease-in-out;
-    transform: scale(0);
+    display: none;
 
 
 }
 
 .model-container.active {
-    transform: scale(1);
+    display: flex;
 }
 
 
@@ -659,6 +747,13 @@ a {
     align-items: flex-start;
     padding: 20px;
     gap: 10px;
+}
+.model-container .form.rsp {
+    gap: 0 !important;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    max-width: 400px;
 }
 
 .note {
@@ -981,39 +1076,112 @@ form .agreeWithTerm .text span {
     font-size: 13px;
     column-gap: 18px;
     margin-bottom: 8px;
-  }
-  
-  .content__or-text span:nth-child(2){
+    width: 100%;
+}
+
+.content__or-text span:nth-child(2) {
     white-space: nowrap;
 
-  }
+}
 
 
-  .content__or-text span:nth-child(3),
-  .content__or-text span:nth-child(1) {
+.content__or-text span:nth-child(3),
+.content__or-text span:nth-child(1) {
     display: block;
     width: 100%;
     height: 1px;
     background-color: rgb(219, 219, 219);
-  }
+}
 
 
-  .time-content {
+.time-content {
     width: 63%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-  }
+}
 
-  .time-content small {
+.time-content small {
     position: absolute;
     top: -10px;
     right: 0;
     font-size: 12px;
     color: #222222;
+}
+
+#userClickButton {
+    display: none;
+}
+
+
+
+
+/*tooltip Box*/
+.con-tooltip {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+  }
+  
+  /*tooltip */
+  .tooltip {
+    visibility: hidden;
+    z-index: 1;
+    opacity: .40;
+    
+    width: fit-content;
+    padding: 0px 5px;
+  
+    background: var(--fav-color);
+    color: #ffff;
+    
+    position: absolute;
+    top: 160%;
+    left: -133%;
+    
+  
+    border-radius: 6px;
+    font: 12px;
+  
+    transition: all 0.3s ease-in-out;
+    
   }
 
-  #userClickButton {
+  .tooltip p {
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 5px 0;
+  }
+  
+  
+  /* tooltip  after*/
+  .tooltip::after {
+    content: " ";
+    width: 0;
+    height: 0;
+    
+    border-style: solid;
+    border-width: 12px 12.5px 0 12.5px;
+    border-color: var(--fav-color) transparent transparent transparent;
+  
+    position: absolute;
+    top:-17%;
+    left:40%;
+    transform: rotate(180deg);
+  
+  }
+  
+  .con-tooltip:hover .tooltip{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .container.index {
+    justify-content: center;
+  }
+
+
+  #userReplyLoadingStatus {
     display: none;
   }

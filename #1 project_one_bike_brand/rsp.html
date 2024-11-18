@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="
@@ -14,37 +14,33 @@ https://cdn.jsdelivr.net/npm/svelte-smooth-popover@1.0.9/index.min.js
 </head>
 
 <body>
-
   <div class="model-container" id="model-container">
     <div class="form rsp">
       <h3>Confirmation!</h3>
-        <p style="margin: 10px 0;">Are You Sure to End Chat?</p>
-        <div class="btn-container">
-          <button class="btn" id="yes-btn">Yes</button>
-          <button class="btn" id="no-btn">No</button>
-        </div>
+      <p style="margin: 10px 0">Are You Sure to End Chat?</p>
+      <div class="btn-container">
+        <button class="btn" id="yes-btn">Yes</button>
+        <button class="btn" id="no-btn">No</button>
+      </div>
     </div>
   </div>
 
-
   <div class="container">
     <div class="top-chat-menu">
-      <div class="toper-container" style="display: flex;flex-direction: row; margin-bottom: 0;">
+      <div class="toper-container" style="display: flex; flex-direction: row; margin-bottom: 0">
         <div class="left-side">
-
           <div class="icon-arrow" onclick="window.location.href = 'index.html'">
             <ion-icon name="chevron-back-outline"></ion-icon>
           </div>
-          <input type="file" hidden>
+          <input type="file" hidden />
           <div class="profile">
-            <img src="./assets/img/profile.png" alt="profile">
+            <img src="./assets/img/profile.png" alt="profile" />
           </div>
 
           <div class="profile-info">
             <p>Representative</p>
             <small>Online</small>
           </div>
-
         </div>
         <div class="right-side">
           <div class="icon icon-call con-tooltip bottom">
@@ -59,146 +55,392 @@ https://cdn.jsdelivr.net/npm/svelte-smooth-popover@1.0.9/index.min.js
           <div class="icon icon-videocam" id="chat-end-btn">
             <ion-icon name="close-circle"></ion-icon>
           </div>
-
         </div>
       </div>
-
-
-
-
-
     </div>
+
     <div class="chat-container">
       <div class="chat-content">
-
-        <div class="info">
+        <div class="info" id="weAreConnecting">
           <p>Please Wait We're Connecting You</p>
           <p>to the Next Available Representative.</p>
         </div>
 
-        <div class="content__or-text">
-          <span></span>
-          <span>Chat Started</span>
-          <span></span>
-        </div>
+        <div id="After-load">
 
-        <div class="wrapper rsp">
-          <div class="time-content">
-            <div></div>
-            <small>04:49PM</small>
+          <div class="content__or-text">
+            <span></span>
+            <span>Chat Started</span>
+            <span></span>
           </div>
-
-          <!-- Brand Selection Section -->
-          <div class="item rsp" style="border: none; min-height: unset; margin-top: 0;">
-            <div class="heading rsp">
-              <h3 style="max-width: 600px; align-items: flex-start; font-size: 13px;">Order Kaise Krna Hai?</h3>
-              <p style="margin: 8px 0; text-align: left; font-size: 13px;">Ðaraz Account Hona Chaiy. Order Form Fill
-                Krna Hai. Same Ya Next Day Rider Khud
-                Ayga. Pehle Bike Milegi Uss
-                K Baad Ðaraz Account Se Payment Krna Hogi. Kya Apko iss Se Koi Aitraz Hai?</p>
+          <!-- Loading Welcome Screen -->
+          <div class="wrapper rsp" id="userReplyStartLoadingStatus">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
             </div>
-            <div class="bottom-btn" style="padding: 0px">
-              <div class="interestedOption rsp">
-                <div class="interestedOptionBtn">
-                  <button class="artraz-button btn" id="aitrazBtnNahi">Koi Aitraz Nahi!</button>
-                  <button class="artraz-button btn" id="aitrazBtnHai">Aitraz Hai</button>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="
+                border: none;
+                min-height: unset;
+                margin-top: 0;
+                padding: 10px 0;
+              ">
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn rsp right" style="margin-top: 0">
+                    <button class="artraz-button btn" id="userReplyLoadingStatusMessage" style="
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: left;
+                      ">
+                      Typing...
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
+          <!-- Welcome Reply -->
+          <div class="wrapper rsp" id="welcomeMessage">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
 
-        <div class="wrapper rsp left" id="userClickButton">
-          <div class="time-content">
-            <div></div>
-            <small>04:49PM</small>
-          </div>
-          <!-- Brand Selection Section -->
-          <div class="item rsp" style="border: none; min-height: unset; margin-top: 0; padding: 10px 0;">
-            <div class="bottom-btn" style="padding: 0px">
-              <div class="interestedOption rsp">
-                <div class="interestedOptionBtn rsp right" style="margin-top: 0;">
-                  <button class="artraz-button btn" id="buttonStateHandle" style="width: 60%;">Koi Aitraz Nahi!</button>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="border: none; min-height: unset; margin-top: 0">
+              <div class="heading rsp">
+                <h3 style="
+                    max-width: 600px;
+                    align-items: flex-start;
+                    font-size: 13px;
+                  ">
+                  Welcome to QistoWale.com
+                </h3>
+                <p style="margin: 8px 0; text-align: left; font-size: 13px">
+                  Umeed Hai Aap Kharyat Se Honge!
+                  Hum Sirf Online Deal Krte Hein.
+                  Aur Payment Bike Milne K Baad Krna
+                  Hoti He iss Se Koi Aitraz to Nahi Apko?
+                </p>
+              </div>
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn">
+                    <button class="artraz-button btn" id="welcomeYes">
+                      Koi Aitraz Nahi!
+                    </button>
+                    <button class="artraz-button btn" id="chat-close">
+                      Close Chat
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
-
- 
-        <div class="wrapper rsp" id="userReplyLoadingStatus">
-          <div class="time-content">
-            <div></div>
-            <small>04:49PM</small>
-          </div>
-          <!-- Brand Selection Section -->
-          <div class="item rsp" style="border: none; min-height: unset; margin-top: 0; padding: 10px 0;">
-            <div class="bottom-btn" style="padding: 0px">
-              <div class="interestedOption rsp">
-                <div class="interestedOptionBtn rsp right" style="margin-top: 0;">
-                  <button class="artraz-button btn" id="userReplyLoadingStatusMessage" style="width: 100%;display: flex; justify-content: flex-start; align-items: left;">Loading...</button>
+          <!-- User Select Message -->
+          <div class="wrapper rsp left" style="display: none;" id="firstUserClickButton">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="
+                border: none;
+                min-height: unset;
+                margin-top: 0;
+                padding: 10px 0;
+              ">
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn rsp right" style="margin-top: 0">
+                    <button class="artraz-button btn" id="FirstUserSelect" style="width: 60%">
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
-
-
-        <div class="wrapper rsp" id="aitraz-message-content">
-          <div class="time-content">
-            <div></div>
-            <small>04:49PM</small>
-          </div>
-          <!-- Brand Selection Section -->
-          <div class="item rsp" style="border: none; min-height: unset; margin-top: 0;">
-            <div class="heading rsp">
-              <h3 id="aitraz-title"
-                style="max-width: 600px; align-items: flex-start; text-align: left; font-size: 13px;"></h3>
-              <p id="aitraz-message" style="margin: 8px 0; text-align: left; font-size: 13px;"></p>
+          <!-- Loading First Message Reply -->
+          <div class="wrapper rsp" style="display: none;" id="firstUserReplyStartLoadingStatus">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
             </div>
-            <div class="bottom-btn" style="padding: 0px">
-              <div class="interestedOption rsp">
-                <div class="interestedOptionBtn">
-                  <button class="artraz-button btn" id="aitrazBtnNahiSub">Koi Aitraz Nahi!</button>
-                  <button class="artraz-button btn" id="aitrazBtnHaiSub">Aitraz Hai</button>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="
+                border: none;
+                min-height: unset;
+                margin-top: 0;
+                padding: 10px 0;
+              ">
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn rsp right" style="margin-top: 0">
+                    <button class="artraz-button btn" id="userReplyLoadingStatusMessage" style="
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: left;
+                      ">
+                      Typing...
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
 
-        <div class="content__or-text" id="chatClosed" style="display: none;">
-          <span></span>
-          <span>Chat Closed</span>
-          <span></span>
-        </div>
+          <!-- First Reply Message -->
+          <div class="wrapper rsp" id="FirstMessage">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
 
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="border: none; min-height: unset; margin-top: 0">
+              <div class="heading rsp">
+                <h3 style="
+                    max-width: 600px;
+                    align-items: flex-start;
+                    font-size: 13px;
+                  ">
+                  Order Kaise Krna Hai?
+                </h3>
+                <p style="margin: 8px 0; text-align: left; font-size: 13px">
+                  Ðaraz Account Hona Chaiy. Order Form Fill Krna Hai. Same Ya Next Day Rider Khud Ayga. Pehle Bike
+                  Milegi Uss K Baad Ðaraz Account Se Payment Krna Hogi. Kya Apka Ðaraz Account Hai?
+                </p>
+              </div>
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn">
+                    <button class="artraz-button btn" id="aitrazBtnNahi">
+                      Bilkul Hai!
+                    </button>
+                    <button class="artraz-button btn" id="aitrazBtnHai">
+                      Account Kaise Bnain?
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Select Second Message -->
+          <div class="wrapper rsp left" id="userClickButton">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="
+                border: none;
+                min-height: unset;
+                margin-top: 0;
+                padding: 10px 0;
+              ">
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn rsp right" style="margin-top: 0">
+                    <button class="artraz-button btn" id="buttonStateHandle" style="width: 60%">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loading Second Message Reply -->
+          <div class="wrapper rsp" id="userReplyLoadingStatus">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="
+                border: none;
+                min-height: unset;
+                margin-top: 0;
+                padding: 10px 0;
+              ">
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn rsp right" style="margin-top: 0">
+                    <button class="artraz-button btn" id="userReplyLoadingStatusMessage" style="
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: left;
+                      ">
+                      Typing...
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Reply Message -->
+          <div class="wrapper rsp" id="aitraz-message-content">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="border: none; min-height: unset; margin-top: 0">
+              <div class="heading rsp">
+                <h3 id="aitraz-title" style="
+                    max-width: 600px;
+                    align-items: flex-start;
+                    text-align: left;
+                    font-size: 13px;
+                  "></h3>
+                <p id="aitraz-message" style="margin: 8px 0; text-align: left; font-size: 13px"></p>
+              </div>
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn">
+                    <button class="artraz-button btn" id="aitrazBtnNahiSub">
+
+                    </button>
+                    <button class="artraz-button btn" id="aitrazBtnHaiSub">
+
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Select Third Message -->
+          <div class="wrapper rsp left" id="ThirdUserClickButton" style="display: none;">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="
+                border: none;
+                min-height: unset;
+                margin-top: 0;
+                padding: 10px 0;
+              ">
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn rsp right" style="margin-top: 0">
+                    <button class="artraz-button btn" id="thirdButtonStateHandle" style="width: 60%">
+
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loading Third Message Reply -->
+          <div class="wrapper rsp" style="display: none;" id="thirdUserReplyLoadingStatus">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="
+                border: none;
+                min-height: unset;
+                margin-top: 0;
+                padding: 10px 0;
+              ">
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn rsp right" style="margin-top: 0">
+                    <button class="artraz-button btn" id="userReplyLoadingStatusMessage" style="
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: left;
+                      ">
+                      Typing...
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Reply Message -->
+          <div class="wrapper rsp" id="third-message-content" style="display: none;">
+            <div class="time-content">
+              <div></div>
+              <small>04:49PM</small>
+            </div>
+            <!-- Brand Selection Section -->
+            <div class="item rsp" style="border: none; min-height: unset; margin-top: 0">
+              <div class="heading rsp">
+                <h3 id="third-title" style="
+                    max-width: 600px;
+                    align-items: flex-start;
+                    text-align: left;
+                    font-size: 13px;
+                  "></h3>
+                <p id="third-message" style="margin: 8px 0; text-align: left; font-size: 13px"></p>
+              </div>
+              <div class="bottom-btn" style="padding: 0px">
+                <div class="interestedOption rsp">
+                  <div class="interestedOptionBtn">
+                    <button class="artraz-button btn" id="thirdAitrazBtnNahiSub">
+
+                    </button>
+                    <button class="artraz-button btn" id="thirdAitrazBtnHaiSub">
+
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content__or-text" id="chatClosed" style="display: none">
+            <span></span>
+            <span>Chat Closed</span>
+            <span></span>
+          </div>
+
+        </div>
       </div>
     </div>
 
     <div class="bottom-chat-menu">
       <div class="imageAttach" id="imageAttachPreview">
         <div class="image">
-          <img src="./assets/img/profile.png" id="imageAttachPreviewImage" alt="profile">
+          <img src="./assets/img/profile.png" id="imageAttachPreviewImage" alt="profile" />
         </div>
-        <div class="imageTitle" id="imageAttachTitle" >screenshot.png</div>
+        <div class="imageTitle" id="imageAttachTitle">screenshot.png</div>
       </div>
-      <div
-        style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; align-items: center;">
+      <div style="
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+          ">
         <div class="left-side">
           <div class="icon happy">
             <ion-icon name="happy"></ion-icon>
           </div>
-          <input type="file" id="imageAttachField" hidden>
+          <input type="file" id="imageAttachField" hidden />
           <div class="icon image" id="imageAttachFileField">
             <ion-icon name="image"></ion-icon>
           </div>
           <div class="inputField">
-            <input type="text" placeholder="Type Your Message..." id="chatInputField">
+            <input type="text" placeholder="Type Your Message..." id="chatInputField" />
           </div>
         </div>
         <div class="right-side">
@@ -208,111 +450,203 @@ https://cdn.jsdelivr.net/npm/svelte-smooth-popover@1.0.9/index.min.js
         </div>
       </div>
     </div>
-
   </div>
 
+
   <script>
-    const model_container = document.getElementById('model-container');
-    const chat_end_btn = document.getElementById('chat-end-btn');
-    chat_end_btn.addEventListener('click', () => {
-      model_container.classList.add('active');
+    const After_load = document.getElementById("After-load");
+    setTimeout(() => {
+      After_load.style.display = 'flex';
+    }, 2000);
+  </script>
+
+
+  <!-- Welcome Message Reply -->
+  <script>
+    const welcomeYes = document.getElementById('welcomeYes');
+    const ChatCLose = document.getElementById('chat-close');
+    welcomeYes.addEventListener('click', () => {
+      document.getElementById('firstUserReplyStartLoadingStatus').style.display = 'flex';
+      document.getElementById('firstUserClickButton').style.display = 'flex';
+      document.getElementById('FirstUserSelect').innerHTML = "Koi Aitraz Nahi!";
+      setTimeout(() => {
+        document.getElementById('FirstMessage').style.display = 'flex';
+        document.getElementById('firstUserReplyStartLoadingStatus').style.display = 'none';
+        welcomeYes.disabled = true;
+        ChatCLose.disabled = true;
+
+      }, 2000);
     })
-
-    const yes_btn = document.getElementById('yes-btn');
-    const no_btn = document.getElementById('no-btn');
-
-    yes_btn.addEventListener('click', () => {
-      // window.location.href = 'end.html';
-      document.getElementById('chatClosed').style.display = 'flex';
-      document.getElementById('chatInputField').value = '';
-      document.getElementById('chatInputField').disabled = true;
-      model_container.classList.remove('active');
+    ChatCLose.addEventListener('click', () => {
+      document.getElementById('FirstUserSelect').innerHTML = "Chat Close";
+      ChatCLose.disabled = true;
+      welcomeYes.disabled = true;
     })
+  </script>
 
-    no_btn.addEventListener('click', () => {
-      model_container.classList.remove('active');
 
-    })
 
+
+  <script>
+    const userReplyStartLoadingStatus = document.getElementById(
+      "userReplyStartLoadingStatus"
+    );
+    // const FirstMessage = document.getElementById("FirstMessage");
+    const welcomeMessage = document.getElementById("welcomeMessage");
+
+    setTimeout(() => {
+      userReplyStartLoadingStatus.style.display = "none";
+      welcomeMessage.style.display = "flex";
+    }, 3000);
   </script>
 
   <script>
-
-    const aitraz_message_content = document.getElementById("aitraz-message-content");
+    const aitraz_message_content = document.getElementById(
+      "aitraz-message-content"
+    );
     const aitrazBtnNahi = document.getElementById("aitrazBtnNahi");
     const aitrazBtnHai = document.getElementById("aitrazBtnHai");
     const buttonStateHandle = document.getElementById("buttonStateHandle");
-    const userClickButton = document.getElementById('userClickButton');
+    const userClickButton = document.getElementById("userClickButton");
     const aitrazBtnNahiSub = document.getElementById("aitrazBtnNahiSub");
     const aitrazBtnHaiSub = document.getElementById("aitrazBtnHaiSub");
 
-    const userReplyLoadingStatus = document.getElementById('userReplyLoadingStatus');
+    const userReplyLoadingStatus = document.getElementById(
+      "userReplyLoadingStatus"
+    );
 
     const aitraz_title = document.getElementById("aitraz-title");
     const aitraz_message = document.getElementById("aitraz-message");
 
     aitrazBtnNahi.addEventListener("click", () => {
-      userReplyLoadingStatus.style.display = 'flex';
-      setTimeout(() => {
-      userReplyLoadingStatus.style.display = 'none';
-      aitraz_message_content.classList.add("active");
-      aitraz_title.innerText = "installment Kaise Pay Hogi?"
-      aitraz_message.innerText = `Hr Month installment Ðaraz Account Se Bhe Pay Kr Skte Hein Aur Rider Bhe Aa K Collect Kr Skta Hai Jisky Receipt Bhe Frahm Ky Jaygi.`
-      aitrazBtnNahiSub.innerHTML = "Ab Aitraz Nahi! "
-      aitrazBtnHaiSub.innerHTML = "Bike Nahi Chaiy"
-      buttonStateHandle.innerHTML = "Koi Aitraz Nahi!";
+      userReplyLoadingStatus.style.display = "flex";
       userClickButton.style.display = "flex";
-      aitrazBtnNahi.disabled = true
-      aitrazBtnHai.disabled = true
+      buttonStateHandle.innerHTML = "Bilkul Hai!";
+
+      setTimeout(() => {
+        userReplyLoadingStatus.style.display = "none";
+        aitraz_message_content.classList.add("active");
+        aitraz_title.innerText = "Bilkul Hai!";
+        aitraz_message.innerText = `Uss Mein Down Payment Jitne Paise Hone Chaiy Jiska Balance Screenshot Le K Order Form Fill Krein.`;
+        aitrazBtnNahiSub.innerHTML = "Order Form";
+        aitrazBtnHaiSub.innerHTML = "Uss ky Baad?";
+        aitrazBtnNahi.disabled = true;
+        aitrazBtnHai.disabled = true;
       }, 2000);
-      
-
-
-    })
+    });
 
     aitrazBtnHai.addEventListener("click", () => {
-      aitraz_message_content.classList.add("active");
-      aitraz_title.innerText = "Ðaraz Account Se Payment Krna Kyon Zarrori Hai?"
-
-      aitraz_message.innerText = `iss Se Humein Earning Hoti Hai Jisky Waja Se Hum Sood/Markup Ya Extra Charges Nahi Lete! Ab Aitraz Nahi! Bike Nahi Chaiy`
-      aitrazBtnNahiSub.innerHTML = "Order Kaise Krein?"
-      aitrazBtnHaiSub.innerHTML = "Filhal Nahi Chaiy"
-      buttonStateHandle.innerHTML = "Aitraz Ha!";
       userClickButton.style.display = "flex";
-      aitrazBtnNahi.disabled = true
-      aitrazBtnHai.disabled = true
+      userReplyLoadingStatus.style.display = "flex";
+      aitraz_title.innerText = "Account Kaise Bnain?";
+      setTimeout(() => {
+        userReplyLoadingStatus.style.display = "none";
 
+        aitraz_message_content.classList.add("active");
+        aitraz_message.innerText = `PlayStore Ya App Store Se Ðaraz App install Krein. Apne Mobile Number Pr Account Bnain. Account Bnate Waqt Facebook Ya Google Button Use Nahi Krna.`;
+        aitrazBtnNahiSub.innerHTML = "Bna Lya!";
+        aitrazBtnHaiSub.innerHTML = "Bna Lenge!";
+        buttonStateHandle.innerHTML = "Account Kaise Bnain?";
+        aitrazBtnNahi.disabled = true;
+        aitrazBtnHai.disabled = true;
+      }, 2000);
+    });
+
+    aitrazBtnNahiSub.addEventListener("click", () => {
+      window.location.href = "https://QistoWale.com/OrderBike";
     })
   </script>
 
+  <!-- Third Message -->
   <script>
-    const imageAttachFileField = document.getElementById('imageAttachFileField');
-    imageAttachFileField.addEventListener('click', () => {
-      document.getElementById('imageAttachField').click();
+    aitrazBtnHaiSub.addEventListener('click', () => {
+      document.getElementById('thirdUserReplyLoadingStatus').style.display = 'flex'
+      document.getElementById('ThirdUserClickButton').style.display = 'flex'
+      document.getElementById('thirdButtonStateHandle').innerHTML = 'Uss ky Baad?'
+
+      setTimeout(() => {
+        document.getElementById('thirdUserReplyLoadingStatus').style.display = 'none'
+        document.getElementById('third-message-content').style.display = 'flex'
+        document.getElementById('third-title').innerText = "Uss Ky Baad"
+        document.getElementById('third-message').innerText = "Rider Ayga Ðaraz Balance Aur CNIC Check Krega. Uss K Baad Customer Jis Showroom Ka Kahega Rider Usi Waqt Sath Ja K Bike Purchase Kr Dega."
+        document.getElementById('thirdAitrazBtnNahiSub').innerText = 'Place Order'
+        document.getElementById('thirdAitrazBtnHaiSub').innerText = 'Not interested'
+        aitrazBtnHaiSub.disabled = true
+
+      }, 2000);
     })
 
-    const imageAttachField = document.getElementById('imageAttachField');
-    imageAttachField.addEventListener('change', () => {
+    document.getElementById('thirdAitrazBtnNahiSub').addEventListener('click', () => {
+      window.location.href = 'https://QistoWale.com/OrderBike'
+    })
+
+  </script>
+
+  <!-- Image Attach -->
+  <script>
+    const imageAttachFileField = document.getElementById(
+      "imageAttachFileField"
+    );
+    imageAttachFileField.addEventListener("click", () => {
+      document.getElementById("imageAttachField").click();
+    });
+
+    const imageAttachField = document.getElementById("imageAttachField");
+    imageAttachField.addEventListener("change", () => {
       const file = imageAttachField.files[0];
       const reader = new FileReader();
-      reader.addEventListener('load', () => {
+      reader.addEventListener("load", () => {
         const fileNameSlice = getFileNameBounded(file.name, 10, 8);
-        document.getElementById('imageAttachTitle').innerText = fileNameSlice;
-        document.getElementById('imageAttachPreview').classList.add('active');
-        document.getElementById('imageAttachPreviewImage').src = reader.result;
+        document.getElementById("imageAttachTitle").innerText = fileNameSlice;
+        document.getElementById("imageAttachPreview").classList.add("active");
+        document.getElementById("imageAttachPreviewImage").src =
+          reader.result;
       });
       reader.readAsDataURL(file);
-    })
+    });
 
     function getFileNameBounded(filename, startLength, endLength) {
-    const start = filename.substring(0, startLength);
-    const end = filename.slice(-endLength);
-    return `${start}...${end}`;
-}
+      const start = filename.substring(0, startLength);
+      const end = filename.slice(-endLength);
+      return `${start}...${end}`;
+    }
+  </script>
+
+  <!-- Model Yes/No Confirmation -->
+  <script>
+    const model_container = document.getElementById("model-container");
+    const chat_end_btn = document.getElementById("chat-end-btn");
+    chat_end_btn.addEventListener("click", () => {
+      model_container.classList.add("active");
+    });
+
+    const yes_btn = document.getElementById("yes-btn");
+    const no_btn = document.getElementById("no-btn");
+    const chat_close = document.getElementById('chat-close');
+    yes_btn.addEventListener("click", ChatClose);
+    chat_close.addEventListener("click", ChatClose);
+
+
+    function ChatClose() {
+      // window.location.href = 'end.html';
+      document.getElementById("chatClosed").style.display = "flex";
+      document.getElementById("chatInputField").value = "";
+      model_container.classList.remove("active");
+
+      document.getElementById("chatInputField").disabled = true;
+      imageAttachFileField.disabled = true;
+      document.getElementById("imageAttachField").disabled = true;
+      chat_end_btn.style.pointerEvents = "none";
+      aitrazBtnNahi.disabled = true;
+      aitrazBtnHai.disabled = true;
+    }
+
+    no_btn.addEventListener("click", () => {
+      model_container.classList.remove("active");
+    });
   </script>
 
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

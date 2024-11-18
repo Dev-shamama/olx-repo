@@ -1185,3 +1185,16 @@ form .agreeWithTerm .text span {
   #userReplyLoadingStatus {
     display: none;
   }
+
+  #welcomeMessage {
+    display: none;
+  }
+
+  #FirstMessage{
+    display: none;
+  }
+
+  #After-load {
+    display: flex; flex-direction: column; width: 100%;
+    display: none;
+  }

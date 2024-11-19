@@ -19,6 +19,7 @@ body {
   width: 100%;
   margin: 0 auto;
   margin: 30px 0;
+  max-width: 1200px;
 }
 
 .topNavigation {
@@ -27,7 +28,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-
 }
 
 .topNavigation .topNavigation-content {
@@ -38,8 +38,8 @@ body {
   flex-direction: row;
   background-color: white;
   padding: 0 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   margin-bottom: 15px;
   border-radius: 8px;
 }
@@ -55,6 +55,7 @@ body {
   border-radius: 50%;
   font-size: 16px;
   margin-right: 20px;
+  color: black;
 }
 
 .topNavigation .title p {
@@ -62,53 +63,89 @@ body {
 }
 
 .tabContainer {
-  width: 100%;
+  width: 90%;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   padding-top: 20px;
+  margin: auto;
 }
 
 .tabContainer .topTab {
-  width: 90%;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   border-bottom: 2px solid #e9e9e9;
   background-color: white;
   border-radius: 8px 8px 0px 0px;
-
+}
+.some-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
+.box1 {
+  border: 2px solid;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  font-size: 21px;
+}
 .tabContainer .topTab .tab {
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   border-bottom: 5px solid transparent;
   margin-bottom: -3px;
 }
+.faq-heading {
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  display: none;
+}
+.faq-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
 
+.faq-description {
+  font-size: 0.7rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.faq-description a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.faq-description a:hover {
+  text-decoration: underline;
+}
 .tabContainer .topTab .tab span {
   color: gray;
   font-size: 14px;
+  cursor: pointer;
 }
-
 .tabContainer .topTab .tab.active {
-  border-bottom: 5px solid #DB6062;
+  border-bottom: 3px solid #db6062;
 }
-
 .tabContainer .topTab .tab.active span {
-  color: #DB6062;
+  color: #db6062;
 }
 
 .tabContent {
-  width: 90%;
+  width: 100%;
+  margin: auto;
 }
 
 .tab-content {
@@ -116,7 +153,6 @@ body {
   flex-direction: column;
   border-radius: 0px 0px 8px 8px;
   display: none;
-
 }
 
 .tab-content.active {
@@ -127,6 +163,9 @@ body {
   width: 100%;
   padding: 20px;
   background-color: white;
+}
+.tab-main {
+  border-radius: 0 0 8px 8px;
 }
 
 .tab-content-1 form {
@@ -147,7 +186,7 @@ body {
 }
 
 .tab-content-1 form .searchInput ion-icon {
-  color: #DB6062;
+  color: #db6062;
   font-size: 20px;
   padding-right: 8px;
 }
@@ -159,7 +198,6 @@ body {
   border-radius: 6px;
   background-color: none;
 }
-
 
 .tab-content-2 form {
   width: 100%;
@@ -211,10 +249,9 @@ body {
   padding: 8px 12px;
   border-radius: 6px;
   border: none;
-  background-color: #DB6062;
+  background-color: #db6062;
   color: white;
 }
-
 
 .card-container {
   width: 100%;
@@ -246,11 +283,27 @@ body {
   text-decoration: none;
 }
 
+.card-container .card.active {
+  background-color: #db6062;
+}
+
+.card-container .card.active .left-side {
+  color: white;
+}
+
+.card-container .card.active p {
+  color: white;
+}
+
+.card-container .card.active .right-side i {
+  color: white !important;
+}
+
 .card-container .card .left-side {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  color: black
+  color: black;
 }
 
 .card-container .card .right-side ion-icon {
@@ -267,8 +320,6 @@ body {
   color: gray;
   font-size: 13px;
 }
-
-
 
 /*start styles*/
 .accordion {
@@ -298,7 +349,6 @@ body {
   transition: all 400ms ease-in-out;
 }
 
-
 .accordion__header.active {
   background: #db606262;
 }
@@ -311,10 +361,64 @@ body {
 .accordion__item .accordion__content {
   padding: 0 25px;
   max-height: 0;
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
 }
 
 .accordion__item .accordion__content p {
   font-size: 13px;
+}
+
+
+.card.card-1.responsive-show {
+  display: none;
+}
+
+
+@media screen and (min-width: 700px) {
+  .tabContainer {
+    padding-top: 0 !important;
+    margin-right: 20px
+  }
+  /* .tabContent {
+    width: 90%;
+  }
+  .tabContainer .topTab {
+    width: 20%;
+    flex-direction: column;
+  } */
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .faq-heading {
+    display: block;
+  }
+  .topNavigation {
+    display: none;
+  }
+
+  .card-container{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    flex-direction: column;
+  }
+
+  .card-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card.card-1.responsive-show {
+    display: flex;
+  }
+
+  .topTab.responsive-hidden {
+  display: none;
+  }
+  
 }

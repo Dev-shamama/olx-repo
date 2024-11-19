@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="topNavigation">
+        <div class="topNavigation-content">
+          <a href="#" class="arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </a>
+          <div class="title">
+            <p>Support</p>
+            <p style="color: gray">Center</p>
+          </div>
+          <!-- <div class=""></div> -->
+        </div>
+      </div>
+
+      <div class="card-container">
+        <div class="card-content">
+
+          
+          <a href="#" class="card card-1 responsive-show" style="flex-direction: row-reverse; justify-content: flex-end; gap: 10px;" >
+            <div class="left-side">
+              <h4>Support Center</h4>
+            </div>
+            <div class="right-side">
+              <i class='bx bx-left-arrow-alt' ></i>
+            </div>
+          </a>
+          
+          <a href="#" class="card card-1 responsive-show tab tab-1 active" onclick="openModelTab(event, 'tab1')">
+            <div class="left-side">
+              <h4>FAQs</h4>
+              <p>Q&A</p>
+            </div>
+            <div class="right-side">
+              <i class='bx bx-question-mark' ></i>
+            </div>
+          </a>
+
+          <a href="#" class="card card-1 responsive-show tab tab-2" onclick="openModelTab(event, 'tab2')">
+            <div class="left-side">
+              <h4>Contact Us</h4>
+              <p>FeedBack, Complaint</p>
+            </div>
+            <div class="right-side">
+              <i class='bx bx-message-rounded-dots'></i>
+            </div>
+          </a>
+
+          <a href="#" class="card card-1">
+            <div class="left-side">
+              <h4>Customer</h4>
+              <p>Service</p>
+            </div>
+            <div class="right-side">
+              <i class="bx bx-support"></i>
+            </div>
+          </a>
+          <a href="#" class="card card-1">
+            <div class="left-side">
+              <h4>WhatsApp</h4>
+              <p>Support</p>
+            </div>
+            <div class="right-side">
+              <i class="bx bxl-whatsapp"></i>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="tabContainer">
+        <div class="topTab responsive-hidden">
+          <div class="tab active tab-1" onclick="openModelTab(event, 'tab1')">
+            <div class="some-box">
+              <span>FAQs</span>
+            </div>
+          </div>
+          <div class="tab tab-2" onclick="openModelTab(event, 'tab2')">
+            <div class="some-box">
+              <span>Contact Us</span>
+            </div>
+          </div>
+        </div>
+        <div class="tabContent">
+          <div id="tab1" class="tab-content tab-content-1 tab-main">
+            <div class="faq-heading">
+              <h1 class="faq-title">Frequently asked questions</h1>
+              <p class="faq-description">
+                These are the most commonly asked questions about Untitled
+                UI.</a>
+              </p>
+            </div>
+            <form action="">
+              <div class="searchInput">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="Search" />
+              </div>
+            </form>
+
+            <div class="accordion">
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq1">
+                  <div class="heading">Advance Kb Pay Krna Hai?</div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq1">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nemo, voluptatem.
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq2">
+                  <div class="heading">installment Kaise Pay Hogi?</div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq2">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, similique!
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq3">
+                  <div class="heading">
+                    Ðaraz Se Payment Krna Kyon Zarrori Hai?
+                  </div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq3">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, similique!
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq4">
+                  <div class="heading">Documents Kb Milenge?</div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq4">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, similique!
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq5">
+                  <div class="heading">Markup Ya Extra Charges Kya Honge?</div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq5">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, similique!
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq6">
+                  <div class="heading">Bike Kb Aur Kaise Milegi?</div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq6">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, similique!
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq7">
+                  <div class="heading">Ðaraz Account Kaise Banega?</div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq7">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, similique!
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <div class="accordion__header" data-toggle="#faq8">
+                  <div class="heading">
+                    Ðaraz Wallet Mein Deposit Kaise Hoga?
+                  </div>
+                  <div class="icon">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="accordion__content" id="faq8">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, similique!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tab2" class="tab-content tab-content-2 tab-main">
+            <div class="faq-heading">
+              <h1 class="faq-title">Contact Us</h1>
+            </div>
+            <form id="contactForm">
+              <div class="inputField">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name" />
+              </div>
+              <div class="inputField">
+                <label for="whatsapp">WhatsApp #</label>
+                <input
+                  type="number"
+                  id="whatsapp"
+                  placeholder="WhatsApp e.g 03007654321"
+                />
+              </div>
+
+              <div class="inputField">
+                <label for="contactReason">Contact Reason</label>
+                <select name="" id="contactReason">
+                  <option value="" disabled selected>Select Reason</option>
+                  <option value="FeedBack">FeedBack</option>
+                  <option value="Complaint">Complaint</option>
+                  <option value="Suggestion">Suggestion</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="inputField">
+                <label for="message">Message</label>
+                <textarea
+                  name=""
+                  id="message"
+                  placeholder="Type Your Message"
+                  cols="30"
+                  rows="8"
+                ></textarea>
+              </div>
+
+              <button type="submit">Send Your Message</button>
+            </form>
+
+            <div class="success-container" id="successContainer">
+              <h3>Success</h3>
+              <p>
+                Thank You For Your Time. Your Message Have Been Sent to Relevant
+                Department. Our Team Will Work on it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js/main.js"></script>
+</html>

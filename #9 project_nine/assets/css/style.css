@@ -29,9 +29,7 @@ body {
 .tabContainer {
   width: 95%;
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
-  padding-top: 20px;
   background-color: white;
   margin-top: 20px;
 
@@ -230,7 +228,7 @@ body {
 .tab-content-1 .terms-content .bottom-btn {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: row;
   gap: 10px;
@@ -239,12 +237,12 @@ body {
 }
 
 .tab-content-1 .terms-content .bottom-btn .btn {
-  width: 50%;
+  text-decoration: none;
   padding: 12px 25px;
   border: 2px solid #db6062;
   background-color: white;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -268,6 +266,13 @@ body {
   display: flex;
 }
 
+@media screen and (max-width: 425px) {
+  .tab-content-1 .terms-content .bottom-btn .btn {
+    padding: 6px 15px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
 
 @media screen and (min-width: 700px) {
   .tabContainer {
@@ -306,7 +311,7 @@ body {
   }
 
   .tab-content-1 .terms-content {
-    width: 80%;
+    width: 100%;
 
   }
 

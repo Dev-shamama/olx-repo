@@ -30,7 +30,7 @@ body {
 .swiper-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .container {
@@ -55,11 +55,22 @@ body {
     flex-direction: column;
 }
 
-.container .topNavigation .left-side p {
-    color: #a5a5a5;
+.container .topNavigation .left-side .image {
+    width: 140px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -15px;
 }
 
-.container .topNavigation .left-side h5 {}
+.container .topNavigation .left-side .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .container .topNavigation .right-side {
     display: flex;
@@ -69,6 +80,8 @@ body {
 }
 
 .container .topNavigation .right-side .icon {
+    text-decoration: none;
+    color: black;
     font-size: 26px;
     background: #ededed;
     display: flex;
@@ -102,9 +115,7 @@ body {
 .container .category .brand {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
-    gap: 10px;
     overflow-x: scroll;
     background-color: white;
     padding: 6px;
@@ -184,8 +195,8 @@ body {
 
 .container .category .product .product-item {
     background: white;
-    padding: 15px;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 .container .category .product .product-item .product-image {
@@ -205,11 +216,13 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 3px 12px;
 }
 .container .category .product .product-item .product-detail p {
     font-size: 15px;
     margin-top: 10px;
     font-weight: 600;
+    color: black;
 }
 
 .container .category .product .product-item .product-detail .subDetail {
@@ -220,5 +233,6 @@ body {
 
 
 .container .category .product .product-item .product-detail .subDetail span {
+    color: black;
     font-size: 14px;
 }

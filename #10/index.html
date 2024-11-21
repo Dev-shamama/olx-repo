@@ -1,217 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="topNavigation">
-            <div class="left-side">
-                <p>Welcome back!</p>
-                <h3>Christan</h3>
-            </div>
-            <div class="right-side">
-                <div class="icon search-icon">
-                    <i class="bx bx-support"></i>
-                </div>
-                <div class="icon notification-icon">
-                    <ion-icon name="log-in-outline"></ion-icon>
-                </div>
-            </div>
+      <div class="topNavigation">
+        <div class="left-side">
+          <div class="image">
+            <img src="./assets/img/logo.png" alt="logo" />
+          </div>
         </div>
-
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <img src="./assets/img/680.png" alt="car">
-                </div>
-                <div class="swiper-slide">
-                    <img src="./assets/img/680.png" alt="car">
-                </div>
-                <div class="swiper-slide">
-                    <img src="./assets/img/680.png" alt="car">
-                </div>
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+        <div class="right-side">
+          <a href="./faqs" class="icon search-icon">
+            <i class="bx bx-support"></i>
+          </a>
+          <a href="./login" class="icon notification-icon">
+            <ion-icon name="log-in-outline"></ion-icon>
+          </a>
         </div>
+      </div>
 
-        <div class="category">
-            <div class="heading">
-                <h3>Select Brand</h3>
-                <a href="#">See all</a>
-            </div>
-            <div class="brand" id="brand">
-                <div class="item active"  data-brand="toyota">
-                    <div class="image">
-                        <img src="./assets/img/toyota.png" alt="toyota">
-                    </div>
-                    <div class="detail">
-                        <span>Toyota</span>
-                    </div>
-                </div>
-                <div class="item" data-brand="honda">
-                    <div class="image">
-                        <img src="./assets/img/honda.png" alt="honda">
-                    </div>
-                    <div class="detail">
-                        <span>Honda</span>
-                    </div>
-                </div>
-                <div class="item" data-brand="adidas">
-                    <div class="image">
-                        <img src="./assets/img/adidas.png" alt="car">
-                    </div>
-                    <div class="detail">
-                        <span>Adidas</span>
-                    </div>
-                </div>
-                <div class="item" data-brand="toyota">
-                    <div class="image">
-                        <img src="./assets/img/toyota.png" alt="toyota">
-                    </div>
-                    <div class="detail">
-                        <span>Toyota</span>
-                    </div>
-                </div>
-                <div class="item" data-brand="honda">
-                    <div class="image">
-                        <img src="./assets/img/honda.png" alt="honda">
-                    </div>
-                    <div class="detail">
-                        <span>Honda</span>
-                    </div>
-                </div>
-                <div class="item" data-brand="adidas">
-                    <div class="image">
-                        <img src="./assets/img/adidas.png" alt="car">
-                    </div>
-                    <div class="detail">
-                        <span>Adidas</span>
-                    </div>
-                </div>
-            </div>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="./assets/img/Pop-up.png" alt="car" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/img/Pop-up.png" alt="car" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/img/Pop-up.png" alt="car" />
+          </div>
         </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
 
-        <div class="category">
-            <div class="heading">
-                <h3>Product</h3>
-                <a href="#">See all</a>
-            </div>
-
-            <hr>
-            <br>    
-            <div class="product" id="product">
-                <div class="product-item" data-product="toyota">
-                    <div class="product-image">
-                        <img src="./assets/img/toyotacar.png" alt="toyota">
-                    </div>
-                    <div class="product-detail">
-                        <p class="title">Atlas Honda CD70 (2025)</p>
-                        <div class="subDetail">
-                            <div class="left-side"><span>Cash Price</span></div>
-                            <div class="right-side"><span>158,000/-</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item" data-product="toyota">
-                    <div class="product-image">
-                        <img src="./assets/img/toyotacar.png" alt="toyota">
-                    </div>
-                    <div class="product-detail">
-                        <p class="title">Atlas Honda CD70 (2025)</p>
-                        <div class="subDetail">
-                            <div class="left-side"><span>Cash Price</span></div>
-                            <div class="right-side"><span>158,000/-</span></div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="product-item" data-product="honda">
-                    <div class="product-image">
-                        <img src="./assets/img/hondacar.png" alt="honda">
-                    </div>
-                    <div class="product-detail">
-                        <p class="title">Atlas Honda CD70 (2025)</p>
-                        <div class="subDetail">
-                            <div class="left-side"><span>Cash Price</span></div>
-                            <div class="right-side"><span>158,000/-</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item" data-product="honda">
-                    <div class="product-image">
-                        <img src="./assets/img/hondacar.png" alt="honda">
-                    </div>
-                    <div class="product-detail">
-                        <p class="title">Atlas Honda CD70 (2025)</p>
-                        <div class="subDetail">
-                            <div class="left-side"><span>Cash Price</span></div>
-                            <div class="right-side"><span>158,000/-</span></div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="product-item" data-product="adidas">
-                    <div class="product-image">
-                        <img src="./assets/img/680.png" alt="">
-                    </div>
-                    <div class="product-detail">
-                        <p class="title">Atlas Honda CD70 (2025)</p>
-                        <div class="subDetail">
-                            <div class="left-side"><span>Cash Price</span></div>
-                            <div class="right-side"><span>158,000/-</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item" data-product="adidas">
-                    <div class="product-image">
-                        <img src="./assets/img/680.png" alt="">
-                    </div>
-                    <div class="product-detail">
-                        <p class="title">Atlas Honda CD70 (2025)</p>
-                        <div class="subDetail">
-                            <div class="left-side"><span>Cash Price</span></div>
-                            <div class="right-side"><span>158,000/-</span></div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+      <div class="category">
+        <div class="heading">
+          <h3>Select Brand</h3>
+          <a href="#">See all</a>
         </div>
+        <div class="brand" id="brand">
+          <div class="item active" data-brand="honda">
+            <div class="image">
+              <img src="./assets/img/honda.png" alt="honda" />
+            </div>
+            <div class="detail">
+              <span>Honda</span>
+            </div>
+          </div>
 
+          <div class="item" data-brand="suzuki">
+            <div class="image">
+              <img src="./assets/img/suzuki.png" alt="suzuki" />
+            </div>
+            <div class="detail">
+              <span>Suzuki</span>
+            </div>
+          </div>
+          <div class="item" data-brand="atlas">
+            <div class="image">
+              <img src="./assets/img/atlas.png" alt="atlas" />
+            </div>
+            <div class="detail">
+              <span>Atlas</span>
+            </div>
+          </div>
+          <div class="item" data-brand="unique">
+            <div class="image">
+              <img src="./assets/img/unique.png" alt="unique" />
+            </div>
+            <div class="detail">
+              <span>Unique</span>
+            </div>
+          </div>
+          <div class="item" data-brand="united">
+            <div class="image">
+              <img src="./assets/img/united.png" alt="united" />
+            </div>
+            <div class="detail">
+              <span>United</span>
+            </div>
+          </div>
+          <div class="item" data-brand="yamaha">
+            <div class="image">
+              <img src="./assets/img/yamaha.png" alt="yamaha" />
+            </div>
+            <div class="detail">
+              <span>Yamaha</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="heading">
+          <h3>Products</h3>
+          <a href="#">See all</a>
+        </div>
+        <hr />
+        <br />
+        <div class="product" id="product">
+          <!-- Honda  Start -->
+          <a href="#" class="product-item" data-product="honda">
+            <div class="product-image">
+              <img src="./assets/img/bike/bike7-1.png" alt="honda" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda CD70 Dream</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>169,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="product-item" data-product="honda">
+            <div class="product-image">
+              <img
+                src="./assets/img/bike/bike5-3.png"
+                alt="honda"
+              />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda Pridor</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>209,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="product-item" data-product="honda">
+            <div class="product-image">
+              <img src="./assets/img/bike/CG125-Black-2d-angle.png" alt="honda" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda CG125</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>235,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="product-item" data-product="honda">
+            <div class="product-image">
+              <img src="./assets/img/bike/CG125-Self-Black-2d-angle.png" alt="honda" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda CG125 SE</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>283,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="product-item" data-product="honda">
+            <div class="product-image">
+              <img
+                src="./assets/img/bike/CG125-Gold-Black-2d-angle.png"
+                alt="honda"
+              />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda CG125 Gold</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>293,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="product-item" data-product="honda">
+            <div class="product-image">
+              <img
+                src="./assets/img/bike/bike8-white.png"
+                alt="honda"
+              />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda CB125F</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="product-item" data-product="honda">
+            <div class="product-image">
+              <img
+                src="./assets/img/bike/bike1-3.png"
+                alt="honda"
+              />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda CB150F</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Honda  End -->
+
+          <!-- Suzuki  End -->
+          <a href="#" class="product-item" data-product="suzuki">
+            <div class="product-image">
+              <img src="./assets/img/commingsoon.png" alt="suzuki" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Product Coming Soon</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a>
+          <!-- Suzuki  End -->
+
+          <!-- Atlas  End -->
+          <a href="#" class="product-item" data-product="atlas">
+            <div class="product-image">
+              <img src="./assets/img/commingsoon.png" alt="suzuki" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Product Coming Soon</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a>
+          <!-- Atlas  End -->
+
+          <!-- Unique  End -->
+          <a href="#" class="product-item" data-product="unique">
+            <div class="product-image">
+              <img src="./assets/img/commingsoon.png" alt="unique" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Product Coming Soon</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a>
+          <!-- Unique  End -->
+
+          <!-- united  End -->
+          <a href="#" class="product-item" data-product="united">
+            <div class="product-image">
+              <img src="./assets/img/commingsoon.png" alt="united" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Product Coming Soon</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a>
+          <!-- united  End -->
+
+          <!-- yamaha  End -->
+          <a href="#" class="product-item" data-product="yamaha">
+            <div class="product-image">
+              <img src="./assets/img/commingsoon.png" alt="yamaha" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Product Coming Soon</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a>
+          <!-- yamaha  End -->
+        </div>
+      </div>
     </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="./assets/js/main.js"></script>
-<script>
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        loop: true,
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      loop: true,
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
     });
-</script>
-
+  </script>
 </html>

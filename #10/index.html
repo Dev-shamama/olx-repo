@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 user-scalable=no"
+    />
+    <meta user-scalable="no" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script
@@ -24,7 +28,110 @@
     />
   </head>
 
-  <body>
+  <body oncontextmenu="return false" onselectstart="return false">
+    <div class="model-container" id="model-container">
+      <form class="form">
+        <div class="note">
+          <label class="title" id="model-title"
+            >Provide Required information</label
+          >
+        </div>
+
+        <span id="success-message" class="success-message"
+          >Your Request Has Been Received Successfully. Our Team Will Contact
+          Within 3-7 Working Day's.</span
+        >
+
+        <div class="input-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              class="registerForm"
+              placeholder="Type Your Name"
+            />
+            <label class="form-label" for="name">Your Name</label>
+          </div>
+        </div>
+
+        <div class="input-form">
+          <div class="form-group">
+            <input
+              type="number"
+              id="whatsapp"
+              class="registerForm"
+              placeholder="03xx xxx xxxx"
+            />
+            <label class="form-label" for="whatsapp">WhatsApp #</label>
+          </div>
+        </div>
+
+        <div class="input-form profession-grid">
+          <div class="form-group">
+            <select
+              name=""
+              id="profession"
+              class="registerForm"
+              placeholder="Income Type"
+            >
+              <option disabled selected value="">Choose Income Type</option>
+              <option value="Private Job">Private Job</option>
+              <option value="Government">Government</option>
+              <option value="Semi Government">Semi Government</option>
+              <option value="Army/Navy/Military/Rangers">
+                Army/Navy/Military/Rangers
+              </option>
+              <option value="lawyer">lawyer</option>
+              <option value="Press/Media">Press/Media</option>
+              <option value="Retired">Retired</option>
+              <option value="Small Business">Small Business</option>
+              <option value="Large Business">Large Business</option>
+              <option value="Shop">Shop</option>
+            </select>
+            <label class="form-label" for="profession">Profession</label>
+          </div>
+        </div>
+
+        <div class="input-form city-grid">
+          <div class="form-group">
+            <select
+              name=""
+              id="city"
+              class="registerForm"
+              placeholder="Income Type"
+            >
+              <option disabled selected value="">Choose City</option>
+              <option value="Karachi`">Karachi</option>
+              <option value="Lahore">Lahore</option>
+            </select>
+            <label class="form-label" for="city">City</label>
+          </div>
+        </div>
+
+        <div class="agreeWithTerm" id="agreeWithTerm">
+          <label class="cl-checkbox">
+            <input type="checkbox" id="acceptCheckbox" />
+            <span class="text">I already have Ðaraz account.</span>
+          </label>
+        </div>
+
+        <div class="btn-container" id="btn-container">
+          <button
+            type="button"
+            id="acceptSubmitButton"
+            disabled
+            class="btn btn-proceed"
+            style="width: 100%"
+          >
+            Proceed
+          </button>
+          <button type="button" id="modelCloseButton" class="btn btn-proceed">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+
     <div class="container">
       <div class="topNavigation">
         <div class="left-side">
@@ -66,15 +173,25 @@
           <a href="#">See all</a>
         </div>
         <div class="brand" id="brand">
+          <!-- Honda -->
           <div class="item active" data-brand="honda">
             <div class="image">
-              <img src="./assets/img/honda.png" alt="honda" />
+              <img src="./assets/img/atlas.png" alt="atlas" />
             </div>
             <div class="detail">
               <span>Honda</span>
             </div>
           </div>
-
+          <!-- Yamaha -->
+          <div class="item" data-brand="yamaha">
+            <div class="image">
+              <img src="./assets/img/yamaha.png" alt="yamaha" />
+            </div>
+            <div class="detail">
+              <span>Yamaha</span>
+            </div>
+          </div>
+          <!-- Suzuki -->
           <div class="item" data-brand="suzuki">
             <div class="image">
               <img src="./assets/img/suzuki.png" alt="suzuki" />
@@ -83,22 +200,10 @@
               <span>Suzuki</span>
             </div>
           </div>
-          <div class="item" data-brand="atlas">
-            <div class="image">
-              <img src="./assets/img/atlas.png" alt="atlas" />
-            </div>
-            <div class="detail">
-              <span>Atlas</span>
-            </div>
-          </div>
-          <div class="item" data-brand="unique">
-            <div class="image">
-              <img src="./assets/img/unique.png" alt="unique" />
-            </div>
-            <div class="detail">
-              <span>Unique</span>
-            </div>
-          </div>
+          <!-- Atlas -->
+          
+
+          <!-- United -->
           <div class="item" data-brand="united">
             <div class="image">
               <img src="./assets/img/united.png" alt="united" />
@@ -107,12 +212,23 @@
               <span>United</span>
             </div>
           </div>
-          <div class="item" data-brand="yamaha">
+          <!-- Unique -->
+          <div class="item" data-brand="unique">
             <div class="image">
-              <img src="./assets/img/yamaha.png" alt="yamaha" />
+              <img src="./assets/img/unique.png" alt="unique" />
             </div>
             <div class="detail">
-              <span>Yamaha</span>
+              <span>Unique</span>
+            </div>
+          </div>
+
+          <!-- Super Start -->
+          <div class="item" data-brand="unique">
+            <div class="image">
+              <img src="./assets/img/superstar.png" alt="unique" />
+            </div>
+            <div class="detail">
+              <span>Superstar</span>
             </div>
           </div>
         </div>
@@ -127,9 +243,26 @@
         <br />
         <div class="product" id="product">
           <!-- Honda  Start -->
-          <a href="#" class="product-item" data-product="honda">
+
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
             <div class="product-image">
               <img src="./assets/img/bike/bike7-1.png" alt="honda" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Atlas Honda CD70</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>158,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
+            <div class="product-image">
+              <img
+                src="./assets/img/bike/cd70-dream-product-range-black.png"
+                alt="honda"
+              />
             </div>
             <div class="product-detail">
               <p class="title">Atlas Honda CD70 Dream</p>
@@ -140,12 +273,9 @@
             </div>
           </a>
 
-          <a href="#" class="product-item" data-product="honda">
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
             <div class="product-image">
-              <img
-                src="./assets/img/bike/bike5-3.png"
-                alt="honda"
-              />
+              <img src="./assets/img/bike/bike5-3.png" alt="honda" />
             </div>
             <div class="product-detail">
               <p class="title">Atlas Honda Pridor</p>
@@ -156,9 +286,12 @@
             </div>
           </a>
 
-          <a href="#" class="product-item" data-product="honda">
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
             <div class="product-image">
-              <img src="./assets/img/bike/CG125-Black-2d-angle.png" alt="honda" />
+              <img
+                src="./assets/img/bike/CG125-Black-2d-angle.png"
+                alt="honda"
+              />
             </div>
             <div class="product-detail">
               <p class="title">Atlas Honda CG125</p>
@@ -169,9 +302,12 @@
             </div>
           </a>
 
-          <a href="#" class="product-item" data-product="honda">
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
             <div class="product-image">
-              <img src="./assets/img/bike/CG125-Self-Black-2d-angle.png" alt="honda" />
+              <img
+                src="./assets/img/bike/CG125-Self-Black-2d-angle.png"
+                alt="honda"
+              />
             </div>
             <div class="product-detail">
               <p class="title">Atlas Honda CG125 SE</p>
@@ -182,7 +318,7 @@
             </div>
           </a>
 
-          <a href="#" class="product-item" data-product="honda">
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
             <div class="product-image">
               <img
                 src="./assets/img/bike/CG125-Gold-Black-2d-angle.png"
@@ -198,12 +334,9 @@
             </div>
           </a>
 
-          <a href="#" class="product-item" data-product="honda">
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
             <div class="product-image">
-              <img
-                src="./assets/img/bike/bike8-white.png"
-                alt="honda"
-              />
+              <img src="./assets/img/bike/bike8-white.png" alt="honda" />
             </div>
             <div class="product-detail">
               <p class="title">Atlas Honda CB125F</p>
@@ -214,12 +347,9 @@
             </div>
           </a>
 
-          <a href="#" class="product-item" data-product="honda">
+          <a href="#" class="product-item" data-product="honda" id="placeOrder">
             <div class="product-image">
-              <img
-                src="./assets/img/bike/bike1-3.png"
-                alt="honda"
-              />
+              <img src="./assets/img/bike/bike1-3.png" alt="honda" />
             </div>
             <div class="product-detail">
               <p class="title">Atlas Honda CB150F</p>
@@ -229,38 +359,83 @@
               </div>
             </div>
           </a>
-
           <!-- Honda  End -->
 
           <!-- Suzuki  End -->
+
+
+          <!-- <a href="#" class="product-item" data-product="suzuki">
+            <div class="product-image">
+              <img src="./assets/img/commingsoon.png" alt="suzuki" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Product Coming Soon</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>00,000/-</span></div>
+              </div>
+            </div>
+          </a> -->
+
+
           <a href="#" class="product-item" data-product="suzuki">
             <div class="product-image">
-              <img src="./assets/img/commingsoon.png" alt="suzuki" />
+              <img src="./assets/img/bike/suzuki/04.png" alt="suzuki" />
             </div>
             <div class="product-detail">
-              <p class="title">Product Coming Soon</p>
+              <p class="title">Suzuki GD110s</p>
               <div class="subDetail">
                 <div class="left-side"><span>Cash Price</span></div>
-                <div class="right-side"><span>00,000/-</span></div>
+                <div class="right-side"><span>359,000/-</span></div>
               </div>
             </div>
           </a>
-          <!-- Suzuki  End -->
 
-          <!-- Atlas  End -->
-          <a href="#" class="product-item" data-product="atlas">
+
+          <a href="#" class="product-item" data-product="suzuki">
             <div class="product-image">
-              <img src="./assets/img/commingsoon.png" alt="suzuki" />
+              <img src="./assets/img/bike/suzuki/GS150.webp" alt="suzuki" />
             </div>
             <div class="product-detail">
-              <p class="title">Product Coming Soon</p>
+              <p class="title">Suzuki GS150</p>
               <div class="subDetail">
                 <div class="left-side"><span>Cash Price</span></div>
-                <div class="right-side"><span>00,000/-</span></div>
+                <div class="right-side"><span>389,000/-</span></div>
               </div>
             </div>
           </a>
-          <!-- Atlas  End -->
+
+          <a href="#" class="product-item" data-product="suzuki">
+            <div class="product-image">
+              <img src="./assets/img/bike/suzuki/bikesResize-2.png" alt="suzuki" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Suzuki GR150</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>547,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          
+          <a href="#" class="product-item" data-product="suzuki">
+            <div class="product-image">
+              <img src="./assets/img/bike/suzuki/3-ccolor-pic-760x330-blue.png" alt="suzuki" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Suzuki GSX125</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>499,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+          
+
+
+          <!-- Suzuki  End -->
 
           <!-- Unique  End -->
           <a href="#" class="product-item" data-product="unique">
@@ -293,7 +468,7 @@
           <!-- united  End -->
 
           <!-- yamaha  End -->
-          <a href="#" class="product-item" data-product="yamaha">
+          <!-- <a href="#" class="product-item" data-product="yamaha">
             <div class="product-image">
               <img src="./assets/img/commingsoon.png" alt="yamaha" />
             </div>
@@ -304,7 +479,67 @@
                 <div class="right-side"><span>00,000/-</span></div>
               </div>
             </div>
+          </a> -->
+
+
+          <a href="#" class="product-item" data-product="yamaha">
+            <div class="product-image">
+              <img src="./assets/img/bike/yamaha/Inside-Thumbnail.png" alt="yamaha" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Yamaha YB125Z</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>424,000/-</span></div>
+              </div>
+            </div>
           </a>
+
+
+          <a href="#" class="product-item" data-product="yamaha">
+            <div class="product-image">
+              <img src="./assets/img/bike/yamaha/Dx-Black-INSIDE-PRODUCT.png" alt="yamaha" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Yamaha YB125Z DX</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>454,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+
+          
+          <a href="#" class="product-item" data-product="yamaha">
+            <div class="product-image">
+              <img src="./assets/img/bike/yamaha/INSIDE-PRODUCT.png" alt="yamaha" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Yamaha YBR125</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>466,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+
+
+          <a href="#" class="product-item" data-product="yamaha">
+            <div class="product-image">
+              <img src="./assets/img/bike/yamaha/Inner-Product-green.png" alt="yamaha" />
+            </div>
+            <div class="product-detail">
+              <p class="title">Yamaha YBR125G</p>
+              <div class="subDetail">
+                <div class="left-side"><span>Cash Price</span></div>
+                <div class="right-side"><span>485,000/-</span></div>
+              </div>
+            </div>
+          </a>
+
+
           <!-- yamaha  End -->
         </div>
       </div>
@@ -322,5 +557,115 @@
         el: ".swiper-pagination",
       },
     });
+  </script>
+
+  <script>
+    const model_container = document.getElementById("model-container");
+    let modelCloseButton = document.getElementById("modelCloseButton");
+    const acceptCheckbox = document.getElementById("acceptCheckbox");
+    modelCloseButton.addEventListener("click", () => {
+      model_container.classList.remove("active");
+    });
+
+    document.getElementById("placeOrder").addEventListener("click", () => {
+      if (getCookie("bike_schedule_active")) {
+        const input_form = document.querySelectorAll(".input-form");
+        input_form.forEach((e) => {
+          e.style.display = "none";
+        });
+
+        document.getElementById("agreeWithTerm").style.display = "none";
+
+        document.getElementById("acceptSubmitButton").style.display = "none";
+
+        document.getElementById("model-title").innerText =
+          "Success - Request Submitted";
+        document.getElementById("success-message").classList.add("active");
+        model_container.classList.add("active");
+      } else {
+        model_container.classList.add("active");
+      }
+      if (getCookie("bike_schedule_deactive")) {
+        window.location.href = "./rsp.html";
+      }
+    });
+
+    const professionFilter = [
+      "Government",
+      "Semi Government",
+      "Army/Navy/Military/Rangers",
+      "lawyer",
+      "Press/Media",
+      "Retired",
+    ];
+
+    const acceptSubmitButton = document.getElementById("acceptSubmitButton");
+
+    acceptCheckbox.addEventListener("change", () => {
+      if (acceptCheckbox.checked) {
+        acceptSubmitButton.disabled = false;
+      } else {
+        acceptSubmitButton.disabled = true;
+      }
+    });
+
+    acceptSubmitButton.addEventListener("click", () => {
+      const name = document.getElementById("name").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+      const profession = document.getElementById("profession").value;
+
+      if (name == "" || whatsapp == "" || profession == "") {
+        alert("All Field is required");
+      } else {
+        if (professionFilter.includes(profession)) {
+          const input_form = document.querySelectorAll(".input-form");
+          input_form.forEach((e) => {
+            e.style.display = "none";
+          });
+
+          document.getElementById("agreeWithTerm").style.display = "none";
+
+          document.getElementById("acceptSubmitButton").style.display = "none";
+          modelCloseButton.style.display = "flex";
+
+          modelCloseButton.addEventListener("click", () => {
+            model_container.classList.remove("active");
+          });
+
+          document.getElementById("model-title").innerText =
+            "Success - Request Submitted";
+          document.getElementById("success-message").classList.add("active");
+          setCookie("bike_schedule_active", "1", 100000);
+          // window.location.href = "gov.html"
+          return;
+        } else {
+          setCookie("bike_schedule_deactive", "1", 100000);
+          window.location.href = "rsp.html";
+          return;
+        }
+
+        alert("Thank you");
+      }
+    });
+
+    // Set a Cookie
+    function setCookie(cName, cValue, expDays) {
+      let date = new Date();
+      date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+    }
+    // Get a Cookie
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const cookiesArray = document.cookie.split(";");
+      for (let i = 0; i < cookiesArray.length; i++) {
+        let cookie = cookiesArray[i];
+        while (cookie.charAt(0) === " ") cookie = cookie.substring(1);
+        if (cookie.indexOf(nameEQ) === 0)
+          return cookie.substring(nameEQ.length, cookie.length);
+      }
+      return null;
+    }
   </script>
 </html>

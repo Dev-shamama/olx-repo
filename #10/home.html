@@ -1,477 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 user-scalable=no"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/home.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/home.css" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
-
-<body>
-
-  <div class="model-container" id="model-container">
-    <form class="form">
-
-      <div class="note">
-        <label class="title" id="model-title">Provide Required information</label>
-      </div>
-
-      <span id="success-message" class="success-message">Your Request Has Been Received Successfully. Our Team Will
-        Contact Within 3-7 Working Day's.</span>
-
-      <div class="input-form">
-        <div class="form-group">
-          <input type="text" id="name" class="registerForm" placeholder="Type Your Name">
-          <label class="form-label" for="name">Your Name</label>
+  <body oncontextmenu="return false" onselectstart="return false">
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Default slides -->
+          <div class="swiper-slide">
+            <img src="./assets/img/bike/bike7-1.png" alt="car" />
+          </div>
         </div>
       </div>
 
-      <div class="input-form">
-        <div class="form-group">
-          <input type="number" id="whatsapp" class="registerForm" placeholder="03xx xxx xxxx">
-          <label class="form-label" for="whatsapp">WhatsApp #</label>
-        </div>
-      </div>
-
-      <div class="input-form profession-grid">
-        <div class="form-group">
-          <select name="" id="profession" class="registerForm" placeholder="Income Type">
-            <option disabled selected value="">Choose Income Type</option>
-            <option value="Private Job">Private Job</option>
-            <option value="Government">Government</option>
-            <option value="Semi Government">Semi Government</option>
-            <option value="Army/Navy/Military/Rangers">Army/Navy/Military/Rangers</option>
-            <option value="lawyer">lawyer</option>
-            <option value="Press/Media">Press/Media</option>
-            <option value="Retired">Retired</option>
-            <option value="Small Business">Small Business</option>
-            <option value="Large Business">Large Business</option>
-            <option value="Shop">Shop</option>
-
-          </select>
-          <label class="form-label" for="profession">Profession</label>
-        </div>
-      </div>
-
-
-      <div class="input-form city-grid">
-        <div class="form-group">
-          <select name="" id="city" class="registerForm" placeholder="Income Type">
-            <option disabled selected value="">Choose City</option>
-            <option value="Karachi`">Karachi</option>
-            <option value="Lahore">Lahore</option>
-
-          </select>
-          <label class="form-label" for="city">City</label>
-        </div>
-      </div>
-
-
-      <div class="agreeWithTerm" id="agreeWithTerm">
-        <label class="cl-checkbox">
-          <input type="checkbox" id="acceptCheckbox">
-          <span class="text">I already have Ðaraz account.</span>
-        </label>
-      </div>
-
-      <div class="btn-container" id="btn-container">
-        <button type="button" id="acceptSubmitButton" disabled class="btn btn-proceed"
-          style="width: 100%;">Proceed</button>
-        <button type="button" id="modelCloseButton" class="btn btn-proceed">Close</button>
-      </div>
-    </form>
-  </div>
-
-  <div class="container">
-    <div class="swiper">
-      <!-- <div class="category variant">
+      <div class="category">
         <div class="brand" id="brand">
-          <div class="item active" data-brand="AtlasHonda"><div class="image"><img src="./assets/img/bike/bike7-1.png" alt="CD70" /></div></div>
-          <div class="item" data-brand="CD70Dream"><div class="image"><img src="./assets/img/bike/cd70-dream-product-range-black.png" alt="CD70 Dream" /></div></div>
-          <div class="item" data-brand="Pridor"><div class="image"><img src="./assets/img/bike/bike5-3.png" alt="Pridor" /></div></div>
-          <div class="item" data-brand="CG125"><div class="image"><img src="./assets/img/bike/CG125-Black-2d-angle.png" alt="CG125" /></div></div>
-        </div>
-      </div> -->
-      <div class="swiper-wrapper">
-        <!-- Default slides -->
-        <div class="swiper-slide"><img src="./assets/img/bike/bike7-1.png" alt="car" /></div>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="brand" id="brand">
-        <div class="item active" data-brand="AtlasHonda">
-          <div class="image"><img src="./assets/img/bike/bike7-1.png" alt="CD70" /></div>
-        </div>
-        <div class="item" data-brand="CD70Dream">
-          <div class="image"><img src="./assets/img/bike/bike7-2.png" alt="CD70 Dream" /></div>
-        </div>
-        <div class="item" data-brand="Pridor">
-          <div class="image"><img src="./assets/img/bike/bike7-3.png" alt="Pridor" /></div>
-        </div>
-      </div>
-
-      <!-- Bike details -->
-      <div class="bike-detail">
-        <div class="bike-title">
-          <div class="left-side">
-            <h3 id="bike-name">CD70 (2025)</h3>
-            <p id="bike-brand">Atlas Honda</p>
+          <div class="item active" data-brand="AtlasHonda">
+            <div class="image">
+              <img src="./assets/img/bike/bike7-1.png" alt="CD70" />
+            </div>
           </div>
-          <div class="right-side">
-            <h4 id="bike-price">158,000/-</h4>
-            <div class="review-container">
-              <span class="review">Reviews</span>
-              <span class="rating">
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-              </span>
+          <div class="item" data-brand="CD70Dream">
+            <div class="image">
+              <img src="./assets/img/bike/bike7-2.png" alt="CD70 Dream" />
+            </div>
+          </div>
+          <div class="item" data-brand="Pridor">
+            <div class="image">
+              <img src="./assets/img/bike/bike7-3.png" alt="Pridor" />
             </div>
           </div>
         </div>
 
-        <div class="choose-duration">
-          <p>Choose Duration</p>
-          <div class="choose-duration-items">
-            <div class="item">
-              <button>3</button>
-            </div>
-            <div class="item">
-              <button>6</button>
-            </div>
-            <div class="item">
-              <button>12</button>
-            </div>
-            <div class="item">
-              <button>18</button>
-            </div>
-            <div class="item">
-              <button class="btn active">24</button>
-            </div>
-            <div class="item">
-              <button disabled>36</button>
-            </div>
-
-            <!-- active -->
-          </div>
-
-          <table border="1px">
-            <tr>
-              <td>Advance</td>
-              <td>installment</td>
-            </tr>
-            <tr>
-              <td>30,000/-</td>
-              <td>5,333/-</td>
-
-            </tr>
-            <tr>
-              <td colspan="2">No Markup No Hidden Charges</td>
-            </tr>
-            <tr>
-              <td colspan="2">Total Price 158,000/-</td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="time-offer-duration">
-          <h4>Free insurance Offer</h4>
-          <div class="offer">
+        <!-- Bike details -->
+        <div class="bike-detail">
+          <div class="bike-title">
             <div class="left-side">
-              <p>Offer Will Expire in</p>
+              <h3 id="bike-name">CD70 (2025)</h3>
+              <p id="bike-brand">Atlas Honda</p>
             </div>
             <div class="right-side">
-              <div class="timer" id="countdown"></div>
+              <h4 id="bike-price">158,000/-</h4>
+              <div class="review-container">
+                <span class="review">Reviews</span>
+                <span class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </span>
+              </div>
             </div>
           </div>
 
+          <div class="choose-duration">
+            <p>Choose Duration</p>
+            <div class="choose-duration-items">
+              <div class="item">
+                <button>3</button>
+              </div>
+              <div class="item">
+                <button>6</button>
+              </div>
+              <div class="item">
+                <button>12</button>
+              </div>
+              <div class="item">
+                <button>18</button>
+              </div>
+              <div class="item">
+                <button class="btn active">24</button>
+              </div>
+              <div class="item">
+                <button disabled>36</button>
+              </div>
+
+              <!-- active -->
+            </div>
+
+            <table border="1px">
+              <tr>
+                <td>Advance</td>
+                <td>installment</td>
+              </tr>
+              <tr>
+                <td>30,000/-</td>
+                <td>5,333/-</td>
+              </tr>
+              <tr>
+                <td colspan="2">No Markup No Hidden Charges</td>
+              </tr>
+              <tr>
+                <td colspan="2">Total Price 158,000/-</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="time-offer-duration">
+            <h4>Free insurance Offer</h4>
+            <div class="offer">
+              <div class="left-side">
+                <p>Offer Will Expire in</p>
+              </div>
+              <div class="right-side">
+                <div class="timer" id="countdown"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="description-container">
+            <div>
+              <h4>Order Krne Ka Tarika!</h4>
+              <p>
+                Order Place Krne K Baad Rider Khud Ayga. Wahi Se Sath Ja K Bike
+                Purchase Kr Dega. Bike Milne K Baad Ðaraz Account Se Payment
+                Krna Hogi.
+              </p>
+            </div>
+            <div>
+              <h4>Order Krne K Liay!</h4>
+              <p>
+                Ðaraz Account Aur Uss Mein Down Payment Honi Chaiy. Balance
+                Screenshot K Sath Order Form Fill Krein. Same Ya Next Day Rider
+                Khud Ayga.
+              </p>
+            </div>
+
+            <div class="description-btn">
+              <a id="placeOrder" href="/OrderBike">Place Order</a>
+              <a href="/faqs">Ask Question?</a>
+            </div>
+          </div>
         </div>
-
-        <div class="description-container">
-          <div>
-            <h4>Order Krne Ka Tarika!</h4>
-            <p>Order Place Krne K Baad Rider Khud Ayga. Wahi Se Sath Ja K Bike Purchase Kr Dega. Bike Milne K Baad Ðaraz
-              Account Se Payment Krna Hogi.</p>
-          </div>
-          <div>
-            <h4>Order Krne K Liay!</h4>
-            <p>Ðaraz Account Aur Uss Mein Down Payment Honi Chaiy. Balance Screenshot K Sath Order Form Fill Krein. Same
-              Ya Next Day Rider Khud Ayga.</p>
-          </div>
-
-          <div class="description-btn">
-            <a id="placeOrder" href="#">Place Order</a>
-            <a href="/faqs">Ask Question?</a>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      loop: true,
 
-
-</body>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="./assets/js/main.js"></script>
-<script>
-  const swiper = new Swiper(".swiper", {
-    // Optional parameters
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const brandContainer = document.getElementById("brand");
-    const bikeNameElement = document.getElementById("bike-name");
-    const bikeBrandElement = document.getElementById("bike-brand");
-    const bikePriceElement = document.getElementById("bike-price");
-    const swiperWrapper = document.querySelector(".swiper-wrapper");
-
-    const bikeData = {
-      AtlasHonda: { name: "Atlas Honda", brand: "Atlas Honda", price: "158,000/-", images: ["bike7-1.png"] },
-      CD70Dream: { name: "Atlas Honda", brand: "Atlas Honda", price: "158,000/-", images: ["bike7-2.png"] },
-      Pridor: { name: "Atlas Honda", brand: "Atlas Honda", price: "158,000/-", images: ["bike7-3.png"] },
-      // CG125SE: { name: "CG125 SE", brand: "CG125 SE", price: "283,000/-", images: ["CG125-Self-Black-2d-angle.png"] },
-      // CG125Gold: { name: "CG125 Gold", brand: "CG125 GOLD", price: "293,000/-", images: ["CG125-Gold-Black-2d-angle.png"] },
-      // CB125F: { name: "CB125F", brand: "CB125F", price: "00,000/-", images: ["bike8-white.png"] },
-      // CB150F: { name: "CB150F", brand: "CB150F", price: ",000/-", images: ["bike1-3.png"] },
-    };
-
-    brandContainer.addEventListener("click", (event) => {
-      const clickedItem = event.target.closest(".item");
-      if (!clickedItem) return;
-
-      brandContainer.querySelectorAll(".item").forEach((item) => item.classList.remove("active"));
-      clickedItem.classList.add("active");
-
-      const brand = clickedItem.dataset.brand;
-      const { name, brand: bikeBrand, price, images } = bikeData[brand];
-
-      // bikeNameElement.textContent = name;
-      bikeBrandElement.textContent = bikeBrand;
-      bikePriceElement.textContent = price;
-
-      swiperWrapper.innerHTML = "";
-      images.forEach((image) => {
-        const slide = document.createElement("div");
-        slide.classList.add("swiper-slide");
-        slide.innerHTML = `<img src="./assets/img/bike/${image}" alt="${brand} image" />`;
-        swiperWrapper.appendChild(slide);
-      });
-
-      swiper.update();
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
     });
-  });
-</script>
-<script>
-  // Function to set a cookie
-  function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
-  }
+  </script>
 
-  // Function to get a cookie value
-  function getCookie(name) {
-    const cookieArr = document.cookie.split("; ");
-    for (let i = 0; i < cookieArr.length; i++) {
-      const cookiePair = cookieArr[i].split("=");
-      if (name === cookiePair[0]) {
-        return cookiePair[1];
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const brandContainer = document.getElementById("brand");
+      const bikeNameElement = document.getElementById("bike-name");
+      const bikeBrandElement = document.getElementById("bike-brand");
+      const bikePriceElement = document.getElementById("bike-price");
+      const swiperWrapper = document.querySelector(".swiper-wrapper");
+
+      const bikeData = {
+        AtlasHonda: {
+          name: "Atlas Honda",
+          brand: "Atlas Honda",
+          price: "158,000/-",
+          images: ["bike7-1.png"],
+        },
+        CD70Dream: {
+          name: "Atlas Honda",
+          brand: "Atlas Honda",
+          price: "158,000/-",
+          images: ["bike7-2.png"],
+        },
+        Pridor: {
+          name: "Atlas Honda",
+          brand: "Atlas Honda",
+          price: "158,000/-",
+          images: ["bike7-3.png"],
+        },
+        // CG125SE: { name: "CG125 SE", brand: "CG125 SE", price: "283,000/-", images: ["CG125-Self-Black-2d-angle.png"] },
+        // CG125Gold: { name: "CG125 Gold", brand: "CG125 GOLD", price: "293,000/-", images: ["CG125-Gold-Black-2d-angle.png"] },
+        // CB125F: { name: "CB125F", brand: "CB125F", price: "00,000/-", images: ["bike8-white.png"] },
+        // CB150F: { name: "CB150F", brand: "CB150F", price: ",000/-", images: ["bike1-3.png"] },
+      };
+
+      brandContainer.addEventListener("click", (event) => {
+        const clickedItem = event.target.closest(".item");
+        if (!clickedItem) return;
+
+        brandContainer
+          .querySelectorAll(".item")
+          .forEach((item) => item.classList.remove("active"));
+        clickedItem.classList.add("active");
+
+        const brand = clickedItem.dataset.brand;
+        const { name, brand: bikeBrand, price, images } = bikeData[brand];
+
+        // bikeNameElement.textContent = name;
+        bikeBrandElement.textContent = bikeBrand;
+        bikePriceElement.textContent = price;
+
+        swiperWrapper.innerHTML = "";
+        images.forEach((image) => {
+          const slide = document.createElement("div");
+          slide.classList.add("swiper-slide");
+          slide.innerHTML = `<img src="./assets/img/bike/${image}" alt="${brand} image" />`;
+          swiperWrapper.appendChild(slide);
+        });
+
+        swiper.update();
+      });
+    });
+  </script>
+  <script>
+    // Function to set a cookie
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
     }
-    return null;
-  }
 
-  // Function to initialize or reset the countdown
-  function initializeCountdown() {
-    let targetDate;
-
-    // Check if "countdownStart" cookie exists
-    const countdownStart = getCookie("countdownStart");
-
-    if (countdownStart) {
-      // Use the saved target date from the cookie
-      const countdownStartDate = new Date(parseInt(countdownStart));
-      const now = new Date().getTime();
-      const thirtyDaysLater = countdownStartDate.getTime() + (30 * 24 * 60 * 60 * 1000);
-
-      // If 30 days have passed, reset the 6-hour countdown
-      if (now >= thirtyDaysLater) {
-        targetDate = new Date().getTime() + (6 * 60 * 60 * 1000); // Set to 6 hours
-        setCookie("countdownStart", new Date().getTime(), 30); // Reset 30-day timer
-      } else {
-        // Set target date for 6 hours from the saved start time
-        targetDate = new Date(parseInt(countdownStart)).getTime() + (6 * 60 * 60 * 1000);
-      }
-    } else {
-      // No cookie exists, so start a 6-hour countdown and set the 30-day cookie
-      targetDate = new Date().getTime() + (6 * 60 * 60 * 1000);
-      setCookie("countdownStart", new Date().getTime(), 30);
-    }
-
-    // Update the countdown every second
-    const countdownInterval = setInterval(function () {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      // Calculate hours, minutes, and seconds remaining
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the countdown
-      document.getElementById("countdown").innerHTML =
-        `<span>${hours}h</span> <span>${minutes}m</span> <span>${seconds}s</span>`;
-
-      // If the countdown is over, reset to another 6 hours if still within 30 days
-      if (distance < 0) {
-        clearInterval(countdownInterval);
-
-        // If 30 days haven't passed, restart the countdown for another 6 hours
-        const countdownStartDate = new Date(parseInt(getCookie("countdownStart")));
-        const thirtyDaysLater = countdownStartDate.getTime() + (30 * 24 * 60 * 60 * 1000);
-
-        if (now < thirtyDaysLater) {
-          // Set target date for another 6 hours
-          targetDate = new Date().getTime() + (6 * 60 * 60 * 1000);
-          initializeCountdown(); // Restart countdown
-        } else {
-          document.getElementById("countdown").innerHTML = "EXPIRED";
+    // Function to get a cookie value
+    function getCookie(name) {
+      const cookieArr = document.cookie.split("; ");
+      for (let i = 0; i < cookieArr.length; i++) {
+        const cookiePair = cookieArr[i].split("=");
+        if (name === cookiePair[0]) {
+          return cookiePair[1];
         }
       }
-    }, 1000);
-  }
-
-  // Initialize the countdown on page load
-  initializeCountdown();
-</script>
-
-<script>
-  const model_container = document.getElementById("model-container");
-  let modelCloseButton = document.getElementById('modelCloseButton')
-  const acceptCheckbox = document.getElementById('acceptCheckbox');
-  modelCloseButton.addEventListener("click", () => {
-    model_container.classList.remove("active");
-  })
-
-
-
-  document.getElementById('placeOrder').addEventListener("click", () => {
-    if (getCookie('bike_schedule_active')) {
-      const input_form = document.querySelectorAll('.input-form');
-      input_form.forEach(e => {
-        e.style.display = "none";
-      })
-
-      document.getElementById('agreeWithTerm').style.display = 'none'
-
-      document.getElementById('acceptSubmitButton').style.display = "none"
-
-      document.getElementById('model-title').innerText = "Success - Request Submitted"
-      document.getElementById("success-message").classList.add("active")
-      model_container.classList.add("active");
-
-    } else {
-      model_container.classList.add("active");
-    }
-    if (getCookie('bike_schedule_deactive')) {
-      window.location.href = "./rsp.html";
+      return null;
     }
 
+    // Function to initialize or reset the countdown
+    function initializeCountdown() {
+      let targetDate;
 
-  })
+      // Check if "countdownStart" cookie exists
+      const countdownStart = getCookie("countdownStart");
 
+      if (countdownStart) {
+        // Use the saved target date from the cookie
+        const countdownStartDate = new Date(parseInt(countdownStart));
+        const now = new Date().getTime();
+        const thirtyDaysLater =
+          countdownStartDate.getTime() + 30 * 24 * 60 * 60 * 1000;
 
-  const professionFilter = ["Government", "Semi Government", "Army/Navy/Military/Rangers", "lawyer", "Press/Media", "Retired"]
-
-  const acceptSubmitButton = document.getElementById('acceptSubmitButton');
-
-  acceptCheckbox.addEventListener("change", () => {
-    if (acceptCheckbox.checked) {
-      acceptSubmitButton.disabled = false
-    } else {
-      acceptSubmitButton.disabled = true
-    }
-  })
-
-  acceptSubmitButton.addEventListener("click", () => {
-    const name = document.getElementById('name').value;
-    const whatsapp = document.getElementById('whatsapp').value;
-    const profession = document.getElementById('profession').value;
-
-    if (name == "" || whatsapp == "" || profession == "") {
-      alert('All Field is required')
-    } else {
-
-
-      if (professionFilter.includes(profession)) {
-        const input_form = document.querySelectorAll('.input-form');
-        input_form.forEach(e => {
-          e.style.display = "none";
-        })
-
-        document.getElementById('agreeWithTerm').style.display = 'none'
-
-        document.getElementById('acceptSubmitButton').style.display = "none"
-        modelCloseButton.style.display = "flex"
-
-        modelCloseButton.addEventListener("click", () => {
-          model_container.classList.remove("active");
-        })
-
-
-        document.getElementById('model-title').innerText = "Success - Request Submitted"
-        document.getElementById("success-message").classList.add("active")
-        setCookie('bike_schedule_active', '1', 100000)
-        // window.location.href = "gov.html"
-        return
+        // If 30 days have passed, reset the 6-hour countdown
+        if (now >= thirtyDaysLater) {
+          targetDate = new Date().getTime() + 6 * 60 * 60 * 1000; // Set to 6 hours
+          setCookie("countdownStart", new Date().getTime(), 30); // Reset 30-day timer
+        } else {
+          // Set target date for 6 hours from the saved start time
+          targetDate =
+            new Date(parseInt(countdownStart)).getTime() + 6 * 60 * 60 * 1000;
+        }
       } else {
-        setCookie('bike_schedule_deactive', '1', 100000)
-        window.location.href = "rsp.html"
-        return
+        // No cookie exists, so start a 6-hour countdown and set the 30-day cookie
+        targetDate = new Date().getTime() + 6 * 60 * 60 * 1000;
+        setCookie("countdownStart", new Date().getTime(), 30);
       }
 
-      alert('Thank you');
+      // Update the countdown every second
+      const countdownInterval = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        // Calculate hours, minutes, and seconds remaining
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the countdown
+        document.getElementById(
+          "countdown"
+        ).innerHTML = `<span>${hours}h</span> <span>${minutes}m</span> <span>${seconds}s</span>`;
+
+        // If the countdown is over, show "EXPIRED"
+        if (distance < 0) {
+          clearInterval(countdownInterval);
+          document.getElementById(
+            "countdown"
+          ).innerHTML = `<span>EXPIRED</span>`;
+
+          // Check if 30 days have passed since the countdown started
+          const countdownStartDate = new Date(
+            parseInt(getCookie("countdownStart"))
+          );
+          const thirtyDaysLater =
+            countdownStartDate.getTime() + 30 * 24 * 60 * 60 * 1000;
+
+          // If 30 days have passed, reset the 30-day cookie and restart the 6-hour countdown
+          if (now >= thirtyDaysLater) {
+            setCookie("countdownStart", new Date().getTime(), 30); // Reset 30-day timer
+            initializeCountdown(); // Restart the 6-hour countdown
+          }
+        }
+      }, 1000);
     }
 
-  })
-
-
-
-  // Set a Cookie
-  function setCookie(cName, cValue, expDays) {
-    let date = new Date();
-    date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
-  }
-  // Get a Cookie
-  function getCookie(name) {
-    const nameEQ = name + "=";
-    const cookiesArray = document.cookie.split(';');
-    for (let i = 0; i < cookiesArray.length; i++) {
-      let cookie = cookiesArray[i];
-      while (cookie.charAt(0) === ' ') cookie = cookie.substring(1);
-      if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length, cookie.length);
-    }
-    return null;
-  }
-
-</script>
-
+    // Initialize the countdown on page load
+    initializeCountdown();
+  </script>
 </html>
